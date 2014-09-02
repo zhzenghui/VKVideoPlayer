@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>1D6AEAD0-7D67-4FC0-B232-D6C6F2068E08</string>
+	<key>IDESourceControlProjectName</key>
+	<string>VKVideoPlayer</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B58F05BA-03BD-49C8-8035-8E6760A49D90</key>
+		<string>https://github.com/viki-org/VKVideoPlayer.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>VKVideoPlayer.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B58F05BA-03BD-49C8-8035-8E6760A49D90</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/viki-org/VKVideoPlayer.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B58F05BA-03BD-49C8-8035-8E6760A49D90</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B58F05BA-03BD-49C8-8035-8E6760A49D90</string>
+			<key>IDESourceControlWCCName</key>
+			<string>VKVideoPlayer</string>
+		</dict>
+	</array>
+</dict>
+</plist>

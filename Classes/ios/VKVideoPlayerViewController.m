@@ -52,6 +52,7 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+    
   self.player = [[VKVideoPlayer alloc] init];
   self.player.delegate = self;
   self.player.view.frame = self.view.bounds;

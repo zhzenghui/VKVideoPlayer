@@ -27,11 +27,11 @@
 - (void)initialize {
   self.httpServer = [[HTTPServer alloc] init];
 	[self.httpServer setType:@"_http._tcp."];
-  [self.httpServer setPort:12345];
+    [self.httpServer setPort:12345];
 //	NSString *webPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"web"];
-    NSString *writableDBPath = [KCachesDirectory stringByAppendingPathComponent:@"web"];
 
-	[self.httpServer setDocumentRoot:writableDBPath];
+
+	[self.httpServer setDocumentRoot:KCachesDirectoryFiles];
 }
 
 - (void)start {

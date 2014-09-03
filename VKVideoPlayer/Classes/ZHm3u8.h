@@ -8,10 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ZHm3u8 : NSObject
+@interface ZHm3u8 : NSObject <UIWebViewDelegate>
+{
+    UIWebView *_webView;
+}
 
 
+- (void)loadM3u8File:(NSURL *)url;
 
-- (void)loadM3u8File:(NSString *)url;
+
 
 @end

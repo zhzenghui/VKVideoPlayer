@@ -91,15 +91,15 @@ typedef enum {
 
 
 
-#define KDocumentDirectory [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0]
-#define KDocumentDirectoryFiles [KDocumentDirectory stringByAppendingPathComponent:@"/files"]
+#define KDocumentDirectory [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
+#define KDocumentDirectoryFiles [KDocumentDirectory stringByAppendingPathComponent:@"/web"]
 #define KDocumentName(fileName) [NSString stringWithFormat:@"%@/%@",  KDocumentDirectoryFiles ,fileName]
 
 
 
 
 #define KCachesDirectory [NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES) objectAtIndex:0]
-#define KCachesDirectoryFiles [KCachesDirectory stringByAppendingPathComponent:@"/files"]
+#define KCachesDirectoryFiles [KCachesDirectory stringByAppendingPathComponent:@"/web"]
 #define KCachesName(fileName) [NSString stringWithFormat:@"%@/%@",  KCachesDirectoryFiles ,fileName]
 
 

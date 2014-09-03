@@ -1,0 +1,9 @@
+播放电影文件：
+
+    iOS sdk中可以使用MPMoviePlayerController来播放电影文件。但是在iOS设备上播放电影文件有严格的格式要求，只能播放下面两个格式的电影文件。
+
+• H.264 (Baseline Profile Level 3.0)
+• MPEG-4 Part 2 video (Simple Profile)
+
+幸运的是你可以先使用iTunes将文件转换成上面两个格式。
+MPMoviePlayerController还可以播放互联网上的视频文件。但是建议你先将视频文件下载到本地，然后播放。如果你不这样做，iOS可能会拒绝播放很大的视频文件。

@@ -6,6 +6,7 @@
 #import "DemoVideoPlayerViewController.h"
 #import "VKVideoPlayer.h"
 #import "VKVideoPlayerCaptionSRT.h"
+#import "ZHm3u8.h"
 
 
 @interface DemoVideoPlayerViewController ()
@@ -14,9 +15,17 @@
 
 @implementation DemoVideoPlayerViewController
 
+- (void)downloadVideo
+{
+    ZHm3u8 *m3u = [[ZHm3u8 alloc] init];
+    [m3u loadM3u8File:self.url];
+}
+
 - (void)viewDidLoad {
   [super viewDidLoad];
-  
+ 
+    
+    
   self.player = [[VKVideoPlayer alloc] init];
   self.player.delegate = self;
   self.player.view.frame = self.view.bounds;
@@ -27,6 +36,8 @@
 
 - (void)viewDidAppear:(BOOL)animated {
   [self playSampleClip1];
+    
+    [self downloadVideo];
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -38,13 +49,17 @@
 }
 
 - (void)playSampleClip1 {
-  [self playStream:[NSURL URLWithString:@"http://localhost:12345/ios_240.m3u8"]];
+
+    [self playStream:self.url];
   
-  [self setLanguageCode:@"JP"];
-  [self.player setCaptionToTop:[self testCaption:@"testCaptionTop"]];
+    
+
+//  [self setLanguageCode:@"JP"];
+//  [self.player setCaptionToTop:[self testCaption:@"testCaptionTop"]];
 }
 - (void)playSampleClip2 {
-  [self playStream:[NSURL URLWithString:@"http://devimages.apple.com/samplecode/adDemo/ad.m3u8"]];
+//  [self playStream:[NSURL URLWithString:@"http://devimages.apple.com/samplecode/adDemo/ad.m3u8"]];
+    [self playStream:[NSURL URLWithString:@"http://localhost:12345/m3u8-1.m3u"]];
 
   [self setLanguageCode:@"JP"];
   [self.player setCaptionToTop:[self testCaption:@"testCaptionTop"]];
@@ -69,13 +84,13 @@
   
   UIButton *playSample1Button = [UIButton buttonWithType:UIButtonTypeCustom];
   playSample1Button.frame = CGRectMake(10,40,80,40);
-  [playSample1Button setTitle:@"sample1" forState:UIControlStateNormal];
+  [playSample1Button setTitle:@"remote" forState:UIControlStateNormal];
   [playSample1Button addTarget:self action:@selector(playSampleClip1) forControlEvents:UIControlEventTouchUpInside];
   [self.player.view addSubviewForControl:playSample1Button];
 
   UIButton *playSample2Button = [UIButton buttonWithType:UIButtonTypeCustom];
   playSample2Button.frame = CGRectMake(100,40,80,40);
-  [playSample2Button setTitle:@"sample2" forState:UIControlStateNormal];
+  [playSample2Button setTitle:@"local" forState:UIControlStateNormal];
   [playSample2Button addTarget:self action:@selector(playSampleClip2) forControlEvents:UIControlEventTouchUpInside];
   [self.player.view addSubviewForControl:playSample2Button];
 }
@@ -129,5 +144,6 @@
     [self.player.view.captionButton setTitle:[code uppercaseString] forState:UIControlStateNormal];
   }
 }
+
 
 @end

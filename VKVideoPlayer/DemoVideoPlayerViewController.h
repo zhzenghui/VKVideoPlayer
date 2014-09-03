@@ -7,9 +7,15 @@
 #import "VKVideoPlayer.h"
 
 @interface DemoVideoPlayerViewController : UIViewController<
-  VKVideoPlayerDelegate
+  VKVideoPlayerDelegate, UIWebViewDelegate
 >
+{
+}
 
 @property (nonatomic, strong) VKVideoPlayer* player;
+
+@property (nonatomic, strong) NSURL *url;
+
+
 
 @end

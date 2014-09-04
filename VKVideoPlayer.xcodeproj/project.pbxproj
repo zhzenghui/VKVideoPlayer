@@ -136,6 +136,12 @@
 		C08DE6C919B846930093244E /* VKVideoPlayerViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08DE69C19B846930093244E /* VKVideoPlayerViewController~iphone.xib */; };
 		C08DE6CC19B849080093244E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6CA19B849080093244E /* Model.xcdatamodeld */; };
 		C08DE6CF19B850770093244E /* DownloadList.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6CE19B850770093244E /* DownloadList.m */; };
+		C08DE6D219B85EE10093244E /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6D119B85EE10093244E /* RecommendViewController.m */; };
+		C08DE6D519B85F150093244E /* ZuiJinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6D419B85F150093244E /* ZuiJinViewController.m */; };
+		C08DE6D819B85F230093244E /* MianZeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6D719B85F230093244E /* MianZeViewController.m */; };
+		C08DE6DB19B85F2F0093244E /* DownLoadListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6DA19B85F2F0093244E /* DownLoadListViewController.m */; };
+		C08DE6DE19B85F3B0093244E /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6DD19B85F3B0093244E /* AboutViewController.m */; };
+		C08DE6E119B860A70093244E /* AllBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6E019B860A70093244E /* AllBaseViewController.m */; };
 		D1C3D9DF54424BFB8D408C64 /* libPods-VKVideoPlayerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 150BEB98AFEA4FF199BA4AA6 /* libPods-VKVideoPlayerTests.a */; };
 /* End PBXBuildFile section */
 
@@ -332,6 +338,18 @@
 		C08DE6CB19B849080093244E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		C08DE6CD19B850770093244E /* DownloadList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadList.h; sourceTree = "<group>"; };
 		C08DE6CE19B850770093244E /* DownloadList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadList.m; sourceTree = "<group>"; };
+		C08DE6D019B85EE10093244E /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
+		C08DE6D119B85EE10093244E /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
+		C08DE6D319B85F150093244E /* ZuiJinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZuiJinViewController.h; sourceTree = "<group>"; };
+		C08DE6D419B85F150093244E /* ZuiJinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZuiJinViewController.m; sourceTree = "<group>"; };
+		C08DE6D619B85F230093244E /* MianZeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MianZeViewController.h; sourceTree = "<group>"; };
+		C08DE6D719B85F230093244E /* MianZeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MianZeViewController.m; sourceTree = "<group>"; };
+		C08DE6D919B85F2F0093244E /* DownLoadListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadListViewController.h; sourceTree = "<group>"; };
+		C08DE6DA19B85F2F0093244E /* DownLoadListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadListViewController.m; sourceTree = "<group>"; };
+		C08DE6DC19B85F3B0093244E /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		C08DE6DD19B85F3B0093244E /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		C08DE6DF19B860A70093244E /* AllBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllBaseViewController.h; sourceTree = "<group>"; };
+		C08DE6E019B860A70093244E /* AllBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllBaseViewController.m; sourceTree = "<group>"; };
 		D92486162E1943FAB9D33A36 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -418,6 +436,16 @@
 				1BA61F9618FCCB6D000DDB94 /* DemoVideoPlayerViewController.m */,
 				1B53AC3B1916732200E1B484 /* DemoHTTPStreamingServer.h */,
 				1B53AC3C1916732200E1B484 /* DemoHTTPStreamingServer.m */,
+				C08DE6D019B85EE10093244E /* RecommendViewController.h */,
+				C08DE6D119B85EE10093244E /* RecommendViewController.m */,
+				C08DE6D319B85F150093244E /* ZuiJinViewController.h */,
+				C08DE6D419B85F150093244E /* ZuiJinViewController.m */,
+				C08DE6D619B85F230093244E /* MianZeViewController.h */,
+				C08DE6D719B85F230093244E /* MianZeViewController.m */,
+				C08DE6D919B85F2F0093244E /* DownLoadListViewController.h */,
+				C08DE6DA19B85F2F0093244E /* DownLoadListViewController.m */,
+				C08DE6DC19B85F3B0093244E /* AboutViewController.h */,
+				C08DE6DD19B85F3B0093244E /* AboutViewController.m */,
 				C035B77619B6FFE9006177B9 /* SettingViewController.h */,
 				C035B77719B6FFE9006177B9 /* SettingViewController.m */,
 				1BB6ADCC18EE626A00767FA3 /* Images.xcassets */,
@@ -563,8 +591,8 @@
 		C08DE63919B846930093244E /* Unit */ = {
 			isa = PBXGroup;
 			children = (
-				C08DE63A19B846930093244E /* CCLog.h */,
 				C08DE63B19B846930093244E /* MagicalRecord */,
+				C08DE63A19B846930093244E /* CCLog.h */,
 				C08DE67719B846930093244E /* NSString+MD5.h */,
 				C08DE67819B846930093244E /* NSString+MD5.m */,
 				C08DE67919B846930093244E /* UIImage+ImageEffects.h */,
@@ -682,6 +710,8 @@
 		C08DE68019B846930093244E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C08DE6DF19B860A70093244E /* AllBaseViewController.h */,
+				C08DE6E019B860A70093244E /* AllBaseViewController.m */,
 				C08DE68119B846930093244E /* Button.h */,
 				C08DE68219B846930093244E /* Button.m */,
 				C08DE68319B846930093244E /* VKVideoPlayer */,
@@ -952,7 +982,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C08DE6D819B85F230093244E /* MianZeViewController.m in Sources */,
 				1BB6ADC718EE626A00767FA3 /* main.m in Sources */,
+				C08DE6D219B85EE10093244E /* RecommendViewController.m in Sources */,
 				C08DE6C719B846930093244E /* VKVideoPlayerViewController.m in Sources */,
 				C08DE6A419B846930093244E /* NSManagedObject+MagicalAggregation.m in Sources */,
 				C08DE69F19B846930093244E /* NSEntityDescription+MagicalDataImport.m in Sources */,
@@ -962,11 +994,13 @@
 				C08DE6B219B846930093244E /* MagicalRecord+iCloud.m in Sources */,
 				C08DE6B019B846930093244E /* MagicalRecord+Actions.m in Sources */,
 				C08DE6A519B846930093244E /* NSManagedObject+MagicalDataImport.m in Sources */,
+				C08DE6DB19B85F2F0093244E /* DownLoadListViewController.m in Sources */,
 				C08DE6A319B846930093244E /* NSString+MagicalDataImport.m in Sources */,
 				C08DE6CC19B849080093244E /* Model.xcdatamodeld in Sources */,
 				C08DE6B519B846930093244E /* MagicalRecord+ShorthandSupport.m in Sources */,
 				C08DE6B419B846930093244E /* MagicalRecord+Setup.m in Sources */,
 				C08DE6BD19B846930093244E /* VKVideoPlayer.m in Sources */,
+				C08DE6DE19B85F3B0093244E /* AboutViewController.m in Sources */,
 				1B53AC3D1916732200E1B484 /* DemoHTTPStreamingServer.m in Sources */,
 				1BF1CCDB1903A8660006FBC8 /* DemoRootViewController.m in Sources */,
 				C08DE6AC19B846930093244E /* NSManagedObjectContext+MagicalThreading.m in Sources */,
@@ -983,8 +1017,10 @@
 				C08DE6A019B846930093244E /* NSNumber+MagicalDataImport.m in Sources */,
 				C08DE6A719B846930093244E /* NSManagedObject+MagicalRecord.m in Sources */,
 				C08DE6B319B846930093244E /* MagicalRecord+Options.m in Sources */,
+				C08DE6D519B85F150093244E /* ZuiJinViewController.m in Sources */,
 				C08DE6AE19B846930093244E /* NSPersistentStore+MagicalRecord.m in Sources */,
 				C08DE6BF19B846930093244E /* VKVideoPlayerCaption.m in Sources */,
+				C08DE6E119B860A70093244E /* AllBaseViewController.m in Sources */,
 				C08DE6B619B846930093244E /* MagicalRecord.m in Sources */,
 				C08DE6B919B846930093244E /* ZHFileCache.m in Sources */,
 				C08DE6CF19B850770093244E /* DownloadList.m in Sources */,

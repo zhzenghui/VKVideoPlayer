@@ -3,14 +3,15 @@
     <entity name="DownloadList" representedClassName="DownloadList" syncable="YES">
         <attribute name="currentIndex" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="files" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="identity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="identity" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
         <attribute name="playAndDownload" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="playTime" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="status" optional="YES" attributeType="Integer 16" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="viewCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="DownloadList" positionX="-54" positionY="-9" width="128" height="163"/>
+        <element name="DownloadList" positionX="-54" positionY="-9" width="128" height="178"/>
     </elements>
 </model>

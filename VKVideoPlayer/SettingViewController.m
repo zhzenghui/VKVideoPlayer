@@ -7,11 +7,11 @@
 //
 
 #import "SettingViewController.h"
-//#import "DownLoadListViewController.h"
-//#import "ZuiJinViewController.h"
-//#import "MianZeViewController.h"
-//#import "AboutViewController.h"
-//#import "RecommendViewController.h"
+#import "DownLoadListViewController.h"
+#import "ZuiJinViewController.h"
+#import "MianZeViewController.h"
+#import "AboutViewController.h"
+#import "RecommendViewController.h"
 
 
 
@@ -38,52 +38,52 @@
 - (void)openViewController:(UIButton *)button
 {
     
-//    BaseViewController *baseView = nil;
-//    switch (button.tag) {
-//        case Kxiazai:
-//        {
-//            baseView = [[DownLoadListViewController alloc] init];
-//            break;
-//        }
-//        case KZuiJin:
-//        {
-//            
-//            baseView = [[ZuiJinViewController alloc] init];
-//            break;
-//        }
-//        case KQingChu:
-//        {
-//            [self clearCache];return;
-//            break;
-//        }
-//        case KMianZe:
-//        {
-//            baseView = [[MianZeViewController alloc] init];
-//            break;
-//        }
-//        case KAbout:
-//        {
-//            baseView = [[AboutViewController alloc] init];
-//            break;
-//        }
-//        case KTuiJian:
-//        {
-//            baseView = [[RecommendViewController alloc] init];
-//            break;
-//        }
-//        default:
-//            break;
-//    }
-//    
-//    
-//    baseView.image = self.image;
-//    [self addChildViewController:baseView];
-//    [self.view addSubview:baseView.view];
-//    baseView.view.alpha = 0;
-//    
-//    [UIView animateWithDuration:KLongDuration animations:^{
-//        baseView.view.alpha = 1;
-//    }];
+    UIViewController *baseView = nil;
+    switch (button.tag) {
+        case Kxiazai:
+        {
+            baseView = [[DownLoadListViewController alloc] init];
+            break;
+        }
+        case KZuiJin:
+        {
+            
+            baseView = [[ZuiJinViewController alloc] init];
+            break;
+        }
+        case KQingChu:
+        {
+            [self clearCache];return;
+            break;
+        }
+        case KMianZe:
+        {
+            baseView = [[MianZeViewController alloc] init];
+            break;
+        }
+        case KAbout:
+        {
+            baseView = [[AboutViewController alloc] init];
+            break;
+        }
+        case KTuiJian:
+        {
+            baseView = [[RecommendViewController alloc] init];
+            break;
+        }
+        default:
+            break;
+    }
+    
+    
+    baseView.view.backgroundColor = [UIColor colorWithPatternImage: self.image];
+    [self addChildViewController:baseView];
+    [self.view addSubview:baseView.view];
+    baseView.view.alpha = 0;
+    
+    [UIView animateWithDuration:KLongDuration animations:^{
+        baseView.view.alpha = 1;
+    }];
     
 }
 

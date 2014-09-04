@@ -1,5 +1,5 @@
 //
-//  SettingViewController.h
+//  AboutViewController.h
 //  Movie
 //
 //  Created by i-Bejoy on 14-1-3.
@@ -9,12 +9,6 @@
 #import "AllBaseViewController.h"
 
 
-@interface SettingViewController : UIViewController
-{
-}
-
-
-@property(nonatomic, retain) UIImage *image;
-
+@interface AboutViewController : AllBaseViewController
 
 @end

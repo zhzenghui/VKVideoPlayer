@@ -1,5 +1,5 @@
 //
-//  SettingViewController.h
+//  MianZeViewController.h
 //  Movie
 //
 //  Created by i-Bejoy on 14-1-3.
@@ -8,13 +8,6 @@
 
 #import "AllBaseViewController.h"
 
-
-@interface SettingViewController : UIViewController
-{
-}
-
-
-@property(nonatomic, retain) UIImage *image;
-
+@interface MianZeViewController : AllBaseViewController
 
 @end

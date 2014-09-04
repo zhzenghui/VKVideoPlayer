@@ -24,6 +24,7 @@
 #import "ZHFileCache.h"
 
 #import "SVPullToRefresh.h"
+#import "DownLoadList.h"
 
 
 typedef enum {
@@ -294,11 +295,45 @@ typedef enum {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     NSDictionary *dict = [self. dataMArray objectAtIndex:indexPath.row];
     
+    
+    
+    
+//    纪录到最近播放
+    DownloadList *dlist ;
+    
+    NSArray *resArray = [DownloadList findByAttribute:@"identity" withValue:[NSNumber numberWithInt:[dict[@"id"] intValue]]];
+    
+    if (resArray .count > 0) {
+        dlist =  resArray[0];
+        int i = [dlist.viewCount intValue];
+        i++;
+        dlist.viewCount = [NSNumber numberWithInt:i];
+
+    }
+    else {
+        dlist = [DownloadList createEntity];
+        dlist.title =  dict[@"title"];
+        dlist.identity = [NSNumber numberWithInt:[ dict[@"id"] intValue]];
+        dlist.status = @1;
+        dlist.url = dict[@"url"];
+        
+        dlist.currentIndex = @0;
+        dlist.files = @0;
+        dlist.viewCount = @1;
+        dlist.playTime = @0.0;
+        dlist.playAndDownload = @0;
+        
+
+    }    
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:nil];
+
+    
+//    打开play页面
 
     DLog(@"%@", dict[@"url"]);
     DemoVideoPlayerViewController *viewController = [[DemoVideoPlayerViewController alloc] init];
 
-    viewController.url = [NSURL URLWithString:dict[@"url"]];
+    viewController.downloadList = dlist;
 
     [self presentViewController:viewController animated:YES completion:^{
         
@@ -321,6 +356,7 @@ typedef enum {
     
     SettingViewController *vc = [[SettingViewController alloc] init];
     vc.view.backgroundColor = [UIColor colorWithPatternImage:imageView.image];
+    vc.image = imageView.image;
     
     [self addChildViewController:vc];
     [self.view addSubview:vc.view];
@@ -394,7 +430,7 @@ typedef enum {
         
         
         
-        UIView *black = [[UIView alloc] initWithFrame:CGRectMake(0, screen_Height-150, screen_Width, 150)];
+        UIView *black = [[UIView alloc] initWithFrame:CGRectMake(0, screen_Height-100, screen_Width, 150)];
         black.backgroundColor = [UIColor blackColor];
         black.alpha = .8;
         
@@ -407,16 +443,18 @@ typedef enum {
         
         [[Button share] addToView:black addTarget:self rect:CGRectMake( 0, 0, 320, 50) tag:101 action:@selector(backCell:) imagePath:@"fanhui" ];
         
-        [[Button share] addToView:black addTarget:self rect:CGRectMake(0, 50, 320, 50) tag:101 action:@selector(openMovieTickets:) imagePath:@"dianyingpiao" ];
+//        [[Button share] addToView:black addTarget:self rect:CGRectMake(0, 50, 320, 50) tag:101 action:@selector(openMovieTickets:) imagePath:@"dianyingpiao" ];
         
-        [[Button share] addToView:black addTarget:self rect:CGRectMake(0, 100, 320, 50) tag:101 action:@selector(openSetting:) imagePath:@"shezhi"];
+        [[Button share] addToView:black addTarget:self rect:CGRectMake(0, 50, 320, 50) tag:101 action:@selector(openSetting:) imagePath:@"shezhi"];
         
         
     }
     
     
-    __block UIImageView *imageView = (UIImageView *)[cell.contentView viewWithTag:100];
-    __block UIImageView *imageView1 = (UIImageView *)[cell.contentView viewWithTag:101];
+    __weak UIImageView *imageView1 = (UIImageView *)[cell.contentView viewWithTag:100];
+    __block UIImageView *imageView2 = (UIImageView *)[cell.contentView viewWithTag:101];
+    
+    
     UILabel *titleLabel = (UILabel *)[cell.contentView viewWithTag:200];
     
     
@@ -440,62 +478,93 @@ typedef enum {
     
     
     
+    [imageView1 setImageWithURLRequest:[NSURLRequest requestWithURL: [NSURL URLWithString:urlString]] placeholderImage:[UIImage imageNamed:@"placeholder.png"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        if (image)
+        {
+            imageView1.image = image;
+
+            NSData *data =  [[ZHFileCache share] file: [request.URL.absoluteString md5]];
+
+            if ( data ) {
+
+                imageView2.image = image;
+            }
+            else  {
+                
+                
+                const char *charLabel = [urlString UTF8String];
+
+                dispatch_queue_t queue = dispatch_queue_create(charLabel, NULL);
+
+                dispatch_async(queue, ^(void) {
+                    
+                    
+                        UIImage *i =  [image applyLightEffect];
+                        NSData *imageData = UIImageJPEGRepresentation(i, 1);
+
+                        [[ZHFileCache share] saveFile:imageData fileName: [request.URL.absoluteString md5]];
+                    
+                        dispatch_async(dispatch_get_main_queue(), ^{
+
+                            imageView2.image = i;
+                        });
+                    
+                });
+            }
+        }
+
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+        
+    }];
     
-    //    if ( ! [dict objectForKey:@"effect"]  ) {
-    //
-    //
-    [imageView setImageWithURL:[NSURL URLWithString:urlString]
-              placeholderImage:[UIImage imageNamed:@"placeholder.png"]
-                     completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
-                         
-                         if (image)
-                         {
-                             
-                             const char *charLabel = [urlString UTF8String];
-                             
-                             dispatch_queue_t queue = dispatch_queue_create(charLabel, NULL);
-                             
-                             dispatch_async(queue, ^(void) {
-                                 //                                     NSLog(@"current %@",  [dict objectForKey:@"title"]);
-                                 NSData *data =  [[ZHFileCache share] file: [dict objectForKey:@"title"]];
-                                 //
-                                 if ( data ) {
-                                     
-                                     if (indexPath.row == 0) {
-                                         
-                                         UIImage *i = [UIImage imageWithData:data];
-                                         dispatch_async(dispatch_get_main_queue(), ^{
-                                             imageView1.image = i;
-                                             
-                                         });
-                                     }
-                                 }
-                                 else {
-                                     
-                                     UIImage *i =  [image applyLightEffect];
-                                     NSData *imageData = UIImageJPEGRepresentation(i, .8);
-                                     
-                                     [[ZHFileCache share] saveFile:imageData fileName: titleLabel.text];
-                                     
-                                     dispatch_async(dispatch_get_main_queue(), ^{
-                                         
-                                         imageView1.image = i;
-                                     });
-                                 }
-                                 //
-                                 
-                                 
-                                 
-                             });
-                         }
-                     }];
-    //
-    //
-    //    }
-    //    else {
-    //        imageView.image = [dict objectForKey:@"image"];
-    //        imageView1.image = [dict objectForKey:@"effect"];
-    //    }
+
+    
+//    [imageView setImageWithURL:[NSURL URLWithString:urlString]
+//              placeholderImage:[UIImage imageNamed:@"placeholder.png"]
+//                     completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+//
+//                         if (image)
+//                         {
+//
+//                             const char *charLabel = [urlString UTF8String];
+//
+//                             dispatch_queue_t queue = dispatch_queue_create(charLabel, NULL);
+//                             
+//                             dispatch_async(queue, ^(void) {
+//                                 //                                     NSLog(@"current %@",  [dict objectForKey:@"title"]);
+//                                 NSData *data =  [[ZHFileCache share] file: [dict objectForKey:@"title"]];
+//                                 //
+//                                 if ( data ) {
+//                                     
+//                                     if (indexPath.row == 0) {
+//                                         
+//                                         UIImage *i = [UIImage imageWithData:data];
+//                                         dispatch_async(dispatch_get_main_queue(), ^{
+//                                             imageView1.image = i;
+//                                             
+//                                         });
+//                                     }
+//                                 }
+//                                 else {
+//                                     
+//                                     UIImage *i =  [image applyLightEffect];
+//                                     NSData *imageData = UIImageJPEGRepresentation(i, .8);
+//                                     
+//                                     [[ZHFileCache share] saveFile:imageData fileName: titleLabel.text];
+//                                     
+//                                     dispatch_async(dispatch_get_main_queue(), ^{
+//                                         
+//                                         imageView1.image = i;
+//                                     });
+//                                 }
+//                                 //
+//                                 
+//                                 
+//                                 
+//                             });
+//                         }
+//                     }];
+ 
     
     
     

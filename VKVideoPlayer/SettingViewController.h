@@ -12,7 +12,7 @@
 }
 
 
-
+@property(nonatomic, retain) UIImageView *imageView;
 
 
 @end

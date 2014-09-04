@@ -36,6 +36,7 @@
     
     
     [self copyData];
+    [MagicalRecord setupCoreDataStackWithStoreNamed:@"MyDatabase.sqlite"];
 
     
     

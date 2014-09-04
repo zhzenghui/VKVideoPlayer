@@ -134,16 +134,19 @@
     [[Button share] addToView:black addTarget:self rect:CGRectMake( 0, 0, 320, 50) tag:101 action:@selector(back:) imagePath:@"fanhui" ];
 
     
-    [self addBackView];
+
 }
 
-
-- (void)addBackView
+- (void)back:(UIButton *)button
 {
-    [[Button share] addToView:self.view addTarget:self rect:RectMakeC2x(0, 0, 110, 110) tag:Action_Back action:@selector(back:) imagePath:@"按钮-返回"];
-    
-    
+    [UIView animateWithDuration:KMiddleDuration animations:^{
+        self.view.alpha = 0;
+    } completion:^(BOOL finished) {
+        [self.view removeFromSuperview];
+        [self removeFromParentViewController];
+    }];
 }
+
 
 
 - (void)viewDidAppear:(BOOL)animated

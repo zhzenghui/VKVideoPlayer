@@ -32,3 +32,6 @@
 #import "CCLog.h"
 //#import "NSDate-Utilities.h"
 #import "JSONKit.h"
+
+#define MR_SHORTHAND
+#import "CoreData+MagicalRecord.h"

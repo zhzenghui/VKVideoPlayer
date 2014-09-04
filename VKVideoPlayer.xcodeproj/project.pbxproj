@@ -8,12 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		12907384268C4DA98E365BB7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 14F1449F68D8472AB23A44B7 /* libPods.a */; };
-		1B1848CC18F3D7B70020F2EE /* VKVideoPlayerCaption.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1848CB18F3D7B70020F2EE /* VKVideoPlayerCaption.m */; };
-		1B1848CF18F3D8CB0020F2EE /* VKVideoPlayerExternalMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1848CE18F3D8CB0020F2EE /* VKVideoPlayerExternalMonitor.m */; };
-		1B1848D518F3DFA30020F2EE /* VKVideoPlayerAirPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1848D418F3DFA30020F2EE /* VKVideoPlayerAirPlay.m */; };
-		1B1848D818F3DFC40020F2EE /* VKVideoPlayerCaptionSRT.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1848D718F3DFC40020F2EE /* VKVideoPlayerCaptionSRT.m */; };
-		1B1848DB18F400640020F2EE /* VKVideoPlayerTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1848DA18F400640020F2EE /* VKVideoPlayerTrack.m */; };
-		1B1848E118F52E8C0020F2EE /* VKVideoPlayerSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B1848E018F52E8C0020F2EE /* VKVideoPlayerSettingsManager.m */; };
 		1B20602B19041AC700E11467 /* Japanese.srt in Resources */ = {isa = PBXBuildFile; fileRef = 1B20602A19041AC700E11467 /* Japanese.srt */; };
 		1B20602D19041AD200E11467 /* English.srt in Resources */ = {isa = PBXBuildFile; fileRef = 1B20602C19041AD200E11467 /* English.srt */; };
 		1B2060311904257500E11467 /* Japanese.srt in Resources */ = {isa = PBXBuildFile; fileRef = 1B20602A19041AC700E11467 /* Japanese.srt */; };
@@ -55,13 +49,6 @@
 		1BB6ADD618EE626A00767FA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB6ADBE18EE626A00767FA3 /* UIKit.framework */; };
 		1BB6ADDE18EE626A00767FA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BB6ADDC18EE626A00767FA3 /* InfoPlist.strings */; };
 		1BB6ADE018EE626A00767FA3 /* VKVideoPlayerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6ADDF18EE626A00767FA3 /* VKVideoPlayerSpec.m */; };
-		1BB6ADF118EE66B000767FA3 /* VKVideoPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BB6ADEA18EE66B000767FA3 /* VKVideoPlayerView.xib */; };
-		1BB6ADF218EE66B000767FA3 /* VKVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6ADEB18EE66B000767FA3 /* VKVideoPlayerViewController.m */; };
-		1BB6ADF318EE66B000767FA3 /* VKVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6ADED18EE66B000767FA3 /* VKVideoPlayerView.m */; };
-		1BB6AE2118EE690300767FA3 /* VKVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6AE2018EE690300767FA3 /* VKVideoPlayer.m */; };
-		1BB6AE3018EE9C9900767FA3 /* VKVideoPlayerLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6AE2F18EE9C9900767FA3 /* VKVideoPlayerLayerView.m */; };
-		1BB9D35118FA4A2B00568286 /* VKVideoPlayerViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BB9D34F18FA4A2B00568286 /* VKVideoPlayerViewController~ipad.xib */; };
-		1BB9D35218FA4A2B00568286 /* VKVideoPlayerViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BB9D35018FA4A2B00568286 /* VKVideoPlayerViewController~iphone.xib */; };
 		1BB9D35618FBE16800568286 /* testCaptionBottom.srt in Resources */ = {isa = PBXBuildFile; fileRef = 1BB9D35518FBE16800568286 /* testCaptionBottom.srt */; };
 		1BB9D35718FBE64E00568286 /* testCaptionBottom.srt in Resources */ = {isa = PBXBuildFile; fileRef = 1BB9D35518FBE16800568286 /* testCaptionBottom.srt */; };
 		1BB9D35918FBFEF300568286 /* testCaptionTop.srt in Resources */ = {isa = PBXBuildFile; fileRef = 1BB9D35818FBFEF300568286 /* testCaptionTop.srt */; };
@@ -102,11 +89,51 @@
 		C035B7BB19B700A7006177B9 /* 视频总长度.png in Resources */ = {isa = PBXBuildFile; fileRef = C035B79919B700A7006177B9 /* 视频总长度.png */; };
 		C035B7BC19B700A7006177B9 /* 返回.png in Resources */ = {isa = PBXBuildFile; fileRef = C035B79A19B700A7006177B9 /* 返回.png */; };
 		C035B7BD19B700A7006177B9 /* 音量总长度 in Resources */ = {isa = PBXBuildFile; fileRef = C035B79B19B700A7006177B9 /* 音量总长度 */; };
-		C0E466A619B5BFCC0000E5E1 /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E4669C19B5BFCC0000E5E1 /* Button.m */; };
-		C0E466A719B5BFCC0000E5E1 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E466A019B5BFCC0000E5E1 /* NSString+MD5.m */; };
-		C0E466A819B5BFCC0000E5E1 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E466A219B5BFCC0000E5E1 /* UIImage+ImageEffects.m */; };
-		C0E466A919B5BFCC0000E5E1 /* ZHFileCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E466A519B5BFCC0000E5E1 /* ZHFileCache.m */; };
-		C0E466AC19B5CA550000E5E1 /* ZHm3u8.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E466AB19B5CA550000E5E1 /* ZHm3u8.m */; };
+		C08DE69D19B846930093244E /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE63F19B846930093244E /* MagicalImportFunctions.m */; };
+		C08DE69E19B846930093244E /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE64119B846930093244E /* NSAttributeDescription+MagicalDataImport.m */; };
+		C08DE69F19B846930093244E /* NSEntityDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE64319B846930093244E /* NSEntityDescription+MagicalDataImport.m */; };
+		C08DE6A019B846930093244E /* NSNumber+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE64519B846930093244E /* NSNumber+MagicalDataImport.m */; };
+		C08DE6A119B846930093244E /* NSObject+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE64719B846930093244E /* NSObject+MagicalDataImport.m */; };
+		C08DE6A219B846930093244E /* NSRelationshipDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE64919B846930093244E /* NSRelationshipDescription+MagicalDataImport.m */; };
+		C08DE6A319B846930093244E /* NSString+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE64B19B846930093244E /* NSString+MagicalDataImport.m */; };
+		C08DE6A419B846930093244E /* NSManagedObject+MagicalAggregation.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE64E19B846930093244E /* NSManagedObject+MagicalAggregation.m */; };
+		C08DE6A519B846930093244E /* NSManagedObject+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE65019B846930093244E /* NSManagedObject+MagicalDataImport.m */; };
+		C08DE6A619B846930093244E /* NSManagedObject+MagicalFinders.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE65219B846930093244E /* NSManagedObject+MagicalFinders.m */; };
+		C08DE6A719B846930093244E /* NSManagedObject+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE65419B846930093244E /* NSManagedObject+MagicalRecord.m */; };
+		C08DE6A819B846930093244E /* NSManagedObject+MagicalRequests.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE65619B846930093244E /* NSManagedObject+MagicalRequests.m */; };
+		C08DE6A919B846930093244E /* NSManagedObjectContext+MagicalObserving.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE65919B846930093244E /* NSManagedObjectContext+MagicalObserving.m */; };
+		C08DE6AA19B846930093244E /* NSManagedObjectContext+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE65B19B846930093244E /* NSManagedObjectContext+MagicalRecord.m */; };
+		C08DE6AB19B846930093244E /* NSManagedObjectContext+MagicalSaves.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE65D19B846930093244E /* NSManagedObjectContext+MagicalSaves.m */; };
+		C08DE6AC19B846930093244E /* NSManagedObjectContext+MagicalThreading.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE65F19B846930093244E /* NSManagedObjectContext+MagicalThreading.m */; };
+		C08DE6AD19B846930093244E /* NSManagedObjectModel+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE66119B846930093244E /* NSManagedObjectModel+MagicalRecord.m */; };
+		C08DE6AE19B846930093244E /* NSPersistentStore+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE66319B846930093244E /* NSPersistentStore+MagicalRecord.m */; };
+		C08DE6AF19B846930093244E /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE66519B846930093244E /* NSPersistentStoreCoordinator+MagicalRecord.m */; };
+		C08DE6B019B846930093244E /* MagicalRecord+Actions.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE66819B846930093244E /* MagicalRecord+Actions.m */; };
+		C08DE6B119B846930093244E /* MagicalRecord+ErrorHandling.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE66A19B846930093244E /* MagicalRecord+ErrorHandling.m */; };
+		C08DE6B219B846930093244E /* MagicalRecord+iCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE66C19B846930093244E /* MagicalRecord+iCloud.m */; };
+		C08DE6B319B846930093244E /* MagicalRecord+Options.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE66E19B846930093244E /* MagicalRecord+Options.m */; };
+		C08DE6B419B846930093244E /* MagicalRecord+Setup.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE67019B846930093244E /* MagicalRecord+Setup.m */; };
+		C08DE6B519B846930093244E /* MagicalRecord+ShorthandSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE67219B846930093244E /* MagicalRecord+ShorthandSupport.m */; };
+		C08DE6B619B846930093244E /* MagicalRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE67419B846930093244E /* MagicalRecord.m */; };
+		C08DE6B719B846930093244E /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE67819B846930093244E /* NSString+MD5.m */; };
+		C08DE6B819B846930093244E /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE67A19B846930093244E /* UIImage+ImageEffects.m */; };
+		C08DE6B919B846930093244E /* ZHFileCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE67D19B846930093244E /* ZHFileCache.m */; };
+		C08DE6BA19B846930093244E /* ZHm3u8.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE67F19B846930093244E /* ZHm3u8.m */; };
+		C08DE6BB19B846930093244E /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE68219B846930093244E /* Button.m */; };
+		C08DE6BC19B846930093244E /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = C08DE68419B846930093244E /* .gitkeep */; };
+		C08DE6BD19B846930093244E /* VKVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE68619B846930093244E /* VKVideoPlayer.m */; };
+		C08DE6BE19B846930093244E /* VKVideoPlayerAirPlay.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE68819B846930093244E /* VKVideoPlayerAirPlay.m */; };
+		C08DE6BF19B846930093244E /* VKVideoPlayerCaption.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE68A19B846930093244E /* VKVideoPlayerCaption.m */; };
+		C08DE6C019B846930093244E /* VKVideoPlayerCaptionSRT.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE68C19B846930093244E /* VKVideoPlayerCaptionSRT.m */; };
+		C08DE6C119B846930093244E /* VKVideoPlayerExternalMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE68F19B846930093244E /* VKVideoPlayerExternalMonitor.m */; };
+		C08DE6C219B846930093244E /* VKVideoPlayerLayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE69119B846930093244E /* VKVideoPlayerLayerView.m */; };
+		C08DE6C319B846930093244E /* VKVideoPlayerSettingsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE69319B846930093244E /* VKVideoPlayerSettingsManager.m */; };
+		C08DE6C419B846930093244E /* VKVideoPlayerTrack.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE69519B846930093244E /* VKVideoPlayerTrack.m */; };
+		C08DE6C519B846930093244E /* VKVideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE69719B846930093244E /* VKVideoPlayerView.m */; };
+		C08DE6C619B846930093244E /* VKVideoPlayerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08DE69819B846930093244E /* VKVideoPlayerView.xib */; };
+		C08DE6C719B846930093244E /* VKVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE69A19B846930093244E /* VKVideoPlayerViewController.m */; };
+		C08DE6C819B846930093244E /* VKVideoPlayerViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08DE69B19B846930093244E /* VKVideoPlayerViewController~ipad.xib */; };
+		C08DE6C919B846930093244E /* VKVideoPlayerViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08DE69C19B846930093244E /* VKVideoPlayerViewController~iphone.xib */; };
 		D1C3D9DF54424BFB8D408C64 /* libPods-VKVideoPlayerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 150BEB98AFEA4FF199BA4AA6 /* libPods-VKVideoPlayerTests.a */; };
 /* End PBXBuildFile section */
 
@@ -123,18 +150,6 @@
 /* Begin PBXFileReference section */
 		14F1449F68D8472AB23A44B7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		150BEB98AFEA4FF199BA4AA6 /* libPods-VKVideoPlayerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-VKVideoPlayerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1B1848CA18F3D7B70020F2EE /* VKVideoPlayerCaption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerCaption.h; path = Classes/ios/VKVideoPlayerCaption.h; sourceTree = SOURCE_ROOT; };
-		1B1848CB18F3D7B70020F2EE /* VKVideoPlayerCaption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayerCaption.m; path = Classes/ios/VKVideoPlayerCaption.m; sourceTree = SOURCE_ROOT; };
-		1B1848CD18F3D8CB0020F2EE /* VKVideoPlayerExternalMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerExternalMonitor.h; path = Classes/ios/VKVideoPlayerExternalMonitor.h; sourceTree = SOURCE_ROOT; };
-		1B1848CE18F3D8CB0020F2EE /* VKVideoPlayerExternalMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayerExternalMonitor.m; path = Classes/ios/VKVideoPlayerExternalMonitor.m; sourceTree = SOURCE_ROOT; };
-		1B1848D318F3DFA30020F2EE /* VKVideoPlayerAirPlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerAirPlay.h; path = Classes/ios/VKVideoPlayerAirPlay.h; sourceTree = SOURCE_ROOT; };
-		1B1848D418F3DFA30020F2EE /* VKVideoPlayerAirPlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayerAirPlay.m; path = Classes/ios/VKVideoPlayerAirPlay.m; sourceTree = SOURCE_ROOT; };
-		1B1848D618F3DFC40020F2EE /* VKVideoPlayerCaptionSRT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerCaptionSRT.h; path = Classes/ios/VKVideoPlayerCaptionSRT.h; sourceTree = SOURCE_ROOT; };
-		1B1848D718F3DFC40020F2EE /* VKVideoPlayerCaptionSRT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayerCaptionSRT.m; path = Classes/ios/VKVideoPlayerCaptionSRT.m; sourceTree = SOURCE_ROOT; };
-		1B1848D918F400640020F2EE /* VKVideoPlayerTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerTrack.h; path = Classes/ios/VKVideoPlayerTrack.h; sourceTree = SOURCE_ROOT; };
-		1B1848DA18F400640020F2EE /* VKVideoPlayerTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayerTrack.m; path = Classes/ios/VKVideoPlayerTrack.m; sourceTree = SOURCE_ROOT; };
-		1B1848DF18F52E8C0020F2EE /* VKVideoPlayerSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerSettingsManager.h; path = Classes/ios/VKVideoPlayerSettingsManager.h; sourceTree = SOURCE_ROOT; };
-		1B1848E018F52E8C0020F2EE /* VKVideoPlayerSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayerSettingsManager.m; path = Classes/ios/VKVideoPlayerSettingsManager.m; sourceTree = SOURCE_ROOT; };
 		1B20602A19041AC700E11467 /* Japanese.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 2; path = Japanese.srt; sourceTree = "<group>"; };
 		1B20602C19041AD200E11467 /* English.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 2; path = English.srt; sourceTree = "<group>"; };
 		1B53AC3719162CC700E1B484 /* web */ = {isa = PBXFileReference; lastKnownFileType = folder; path = web; sourceTree = "<group>"; };
@@ -179,18 +194,6 @@
 		1BB6ADDB18EE626A00767FA3 /* VKVideoPlayerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VKVideoPlayerTests-Info.plist"; sourceTree = "<group>"; };
 		1BB6ADDD18EE626A00767FA3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1BB6ADDF18EE626A00767FA3 /* VKVideoPlayerSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKVideoPlayerSpec.m; sourceTree = "<group>"; };
-		1BB6ADEA18EE66B000767FA3 /* VKVideoPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = VKVideoPlayerView.xib; path = Classes/ios/VKVideoPlayerView.xib; sourceTree = SOURCE_ROOT; };
-		1BB6ADEB18EE66B000767FA3 /* VKVideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = VKVideoPlayerViewController.m; path = Classes/ios/VKVideoPlayerViewController.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		1BB6ADEC18EE66B000767FA3 /* VKVideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerView.h; path = Classes/ios/VKVideoPlayerView.h; sourceTree = SOURCE_ROOT; };
-		1BB6ADED18EE66B000767FA3 /* VKVideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = VKVideoPlayerView.m; path = Classes/ios/VKVideoPlayerView.m; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		1BB6ADEF18EE66B000767FA3 /* VKVideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerViewController.h; path = Classes/ios/VKVideoPlayerViewController.h; sourceTree = SOURCE_ROOT; };
-		1BB6AE1F18EE690300767FA3 /* VKVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayer.h; path = Classes/ios/VKVideoPlayer.h; sourceTree = SOURCE_ROOT; };
-		1BB6AE2018EE690300767FA3 /* VKVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayer.m; path = Classes/ios/VKVideoPlayer.m; sourceTree = SOURCE_ROOT; wrapsLines = 1; };
-		1BB6AE2D18EE9AEB00767FA3 /* VKVideoPlayerConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerConfig.h; path = Classes/ios/VKVideoPlayerConfig.h; sourceTree = SOURCE_ROOT; };
-		1BB6AE2E18EE9C9900767FA3 /* VKVideoPlayerLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VKVideoPlayerLayerView.h; path = Classes/ios/VKVideoPlayerLayerView.h; sourceTree = SOURCE_ROOT; };
-		1BB6AE2F18EE9C9900767FA3 /* VKVideoPlayerLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VKVideoPlayerLayerView.m; path = Classes/ios/VKVideoPlayerLayerView.m; sourceTree = SOURCE_ROOT; };
-		1BB9D34F18FA4A2B00568286 /* VKVideoPlayerViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "VKVideoPlayerViewController~ipad.xib"; path = "Classes/ios/VKVideoPlayerViewController~ipad.xib"; sourceTree = SOURCE_ROOT; };
-		1BB9D35018FA4A2B00568286 /* VKVideoPlayerViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = "VKVideoPlayerViewController~iphone.xib"; path = "Classes/ios/VKVideoPlayerViewController~iphone.xib"; sourceTree = SOURCE_ROOT; };
 		1BB9D35518FBE16800568286 /* testCaptionBottom.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testCaptionBottom.srt; sourceTree = "<group>"; };
 		1BB9D35818FBFEF300568286 /* testCaptionTop.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 2; path = testCaptionTop.srt; sourceTree = "<group>"; };
 		1BF1CCD91903A8660006FBC8 /* DemoRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoRootViewController.h; sourceTree = "<group>"; };
@@ -232,19 +235,98 @@
 		C035B79919B700A7006177B9 /* 视频总长度.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "视频总长度.png"; sourceTree = "<group>"; };
 		C035B79A19B700A7006177B9 /* 返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回.png"; sourceTree = "<group>"; };
 		C035B79B19B700A7006177B9 /* 音量总长度 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "音量总长度"; sourceTree = "<group>"; };
-		C0E4669B19B5BFCC0000E5E1 /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
-		C0E4669C19B5BFCC0000E5E1 /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
-		C0E4669D19B5BFCC0000E5E1 /* CCLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLog.h; sourceTree = "<group>"; };
-		C0E4669E19B5BFCC0000E5E1 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
-		C0E4669F19B5BFCC0000E5E1 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
-		C0E466A019B5BFCC0000E5E1 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
-		C0E466A119B5BFCC0000E5E1 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
-		C0E466A219B5BFCC0000E5E1 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
-		C0E466A319B5BFCC0000E5E1 /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
-		C0E466A419B5BFCC0000E5E1 /* ZHFileCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFileCache.h; sourceTree = "<group>"; };
-		C0E466A519B5BFCC0000E5E1 /* ZHFileCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFileCache.m; sourceTree = "<group>"; };
-		C0E466AA19B5CA550000E5E1 /* ZHm3u8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHm3u8.h; sourceTree = "<group>"; };
-		C0E466AB19B5CA550000E5E1 /* ZHm3u8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHm3u8.m; sourceTree = "<group>"; };
+		C08DE63719B846930093244E /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		C08DE63A19B846930093244E /* CCLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLog.h; sourceTree = "<group>"; };
+		C08DE63E19B846930093244E /* MagicalImportFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalImportFunctions.h; sourceTree = "<group>"; };
+		C08DE63F19B846930093244E /* MagicalImportFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalImportFunctions.m; sourceTree = "<group>"; };
+		C08DE64019B846930093244E /* NSAttributeDescription+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributeDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
+		C08DE64119B846930093244E /* NSAttributeDescription+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributeDescription+MagicalDataImport.m"; sourceTree = "<group>"; };
+		C08DE64219B846930093244E /* NSEntityDescription+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSEntityDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
+		C08DE64319B846930093244E /* NSEntityDescription+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSEntityDescription+MagicalDataImport.m"; sourceTree = "<group>"; };
+		C08DE64419B846930093244E /* NSNumber+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+MagicalDataImport.h"; sourceTree = "<group>"; };
+		C08DE64519B846930093244E /* NSNumber+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+MagicalDataImport.m"; sourceTree = "<group>"; };
+		C08DE64619B846930093244E /* NSObject+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+MagicalDataImport.h"; sourceTree = "<group>"; };
+		C08DE64719B846930093244E /* NSObject+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MagicalDataImport.m"; sourceTree = "<group>"; };
+		C08DE64819B846930093244E /* NSRelationshipDescription+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSRelationshipDescription+MagicalDataImport.h"; sourceTree = "<group>"; };
+		C08DE64919B846930093244E /* NSRelationshipDescription+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSRelationshipDescription+MagicalDataImport.m"; sourceTree = "<group>"; };
+		C08DE64A19B846930093244E /* NSString+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MagicalDataImport.h"; sourceTree = "<group>"; };
+		C08DE64B19B846930093244E /* NSString+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MagicalDataImport.m"; sourceTree = "<group>"; };
+		C08DE64D19B846930093244E /* NSManagedObject+MagicalAggregation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MagicalAggregation.h"; sourceTree = "<group>"; };
+		C08DE64E19B846930093244E /* NSManagedObject+MagicalAggregation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MagicalAggregation.m"; sourceTree = "<group>"; };
+		C08DE64F19B846930093244E /* NSManagedObject+MagicalDataImport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MagicalDataImport.h"; sourceTree = "<group>"; };
+		C08DE65019B846930093244E /* NSManagedObject+MagicalDataImport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MagicalDataImport.m"; sourceTree = "<group>"; };
+		C08DE65119B846930093244E /* NSManagedObject+MagicalFinders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MagicalFinders.h"; sourceTree = "<group>"; };
+		C08DE65219B846930093244E /* NSManagedObject+MagicalFinders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MagicalFinders.m"; sourceTree = "<group>"; };
+		C08DE65319B846930093244E /* NSManagedObject+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MagicalRecord.h"; sourceTree = "<group>"; };
+		C08DE65419B846930093244E /* NSManagedObject+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MagicalRecord.m"; sourceTree = "<group>"; };
+		C08DE65519B846930093244E /* NSManagedObject+MagicalRequests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+MagicalRequests.h"; sourceTree = "<group>"; };
+		C08DE65619B846930093244E /* NSManagedObject+MagicalRequests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+MagicalRequests.m"; sourceTree = "<group>"; };
+		C08DE65819B846930093244E /* NSManagedObjectContext+MagicalObserving.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+MagicalObserving.h"; sourceTree = "<group>"; };
+		C08DE65919B846930093244E /* NSManagedObjectContext+MagicalObserving.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+MagicalObserving.m"; sourceTree = "<group>"; };
+		C08DE65A19B846930093244E /* NSManagedObjectContext+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+MagicalRecord.h"; sourceTree = "<group>"; };
+		C08DE65B19B846930093244E /* NSManagedObjectContext+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+MagicalRecord.m"; sourceTree = "<group>"; };
+		C08DE65C19B846930093244E /* NSManagedObjectContext+MagicalSaves.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+MagicalSaves.h"; sourceTree = "<group>"; };
+		C08DE65D19B846930093244E /* NSManagedObjectContext+MagicalSaves.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+MagicalSaves.m"; sourceTree = "<group>"; };
+		C08DE65E19B846930093244E /* NSManagedObjectContext+MagicalThreading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectContext+MagicalThreading.h"; sourceTree = "<group>"; };
+		C08DE65F19B846930093244E /* NSManagedObjectContext+MagicalThreading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectContext+MagicalThreading.m"; sourceTree = "<group>"; };
+		C08DE66019B846930093244E /* NSManagedObjectModel+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObjectModel+MagicalRecord.h"; sourceTree = "<group>"; };
+		C08DE66119B846930093244E /* NSManagedObjectModel+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObjectModel+MagicalRecord.m"; sourceTree = "<group>"; };
+		C08DE66219B846930093244E /* NSPersistentStore+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPersistentStore+MagicalRecord.h"; sourceTree = "<group>"; };
+		C08DE66319B846930093244E /* NSPersistentStore+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPersistentStore+MagicalRecord.m"; sourceTree = "<group>"; };
+		C08DE66419B846930093244E /* NSPersistentStoreCoordinator+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSPersistentStoreCoordinator+MagicalRecord.h"; sourceTree = "<group>"; };
+		C08DE66519B846930093244E /* NSPersistentStoreCoordinator+MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSPersistentStoreCoordinator+MagicalRecord.m"; sourceTree = "<group>"; };
+		C08DE66719B846930093244E /* MagicalRecord+Actions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord+Actions.h"; sourceTree = "<group>"; };
+		C08DE66819B846930093244E /* MagicalRecord+Actions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MagicalRecord+Actions.m"; sourceTree = "<group>"; };
+		C08DE66919B846930093244E /* MagicalRecord+ErrorHandling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord+ErrorHandling.h"; sourceTree = "<group>"; };
+		C08DE66A19B846930093244E /* MagicalRecord+ErrorHandling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MagicalRecord+ErrorHandling.m"; sourceTree = "<group>"; };
+		C08DE66B19B846930093244E /* MagicalRecord+iCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord+iCloud.h"; sourceTree = "<group>"; };
+		C08DE66C19B846930093244E /* MagicalRecord+iCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MagicalRecord+iCloud.m"; sourceTree = "<group>"; };
+		C08DE66D19B846930093244E /* MagicalRecord+Options.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord+Options.h"; sourceTree = "<group>"; };
+		C08DE66E19B846930093244E /* MagicalRecord+Options.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MagicalRecord+Options.m"; sourceTree = "<group>"; };
+		C08DE66F19B846930093244E /* MagicalRecord+Setup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord+Setup.h"; sourceTree = "<group>"; };
+		C08DE67019B846930093244E /* MagicalRecord+Setup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MagicalRecord+Setup.m"; sourceTree = "<group>"; };
+		C08DE67119B846930093244E /* MagicalRecord+ShorthandSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MagicalRecord+ShorthandSupport.h"; sourceTree = "<group>"; };
+		C08DE67219B846930093244E /* MagicalRecord+ShorthandSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MagicalRecord+ShorthandSupport.m"; sourceTree = "<group>"; };
+		C08DE67319B846930093244E /* MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecord.h; sourceTree = "<group>"; };
+		C08DE67419B846930093244E /* MagicalRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagicalRecord.m; sourceTree = "<group>"; };
+		C08DE67519B846930093244E /* MagicalRecordShorthand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicalRecordShorthand.h; sourceTree = "<group>"; };
+		C08DE67619B846930093244E /* CoreData+MagicalRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CoreData+MagicalRecord.h"; sourceTree = "<group>"; };
+		C08DE67719B846930093244E /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		C08DE67819B846930093244E /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		C08DE67919B846930093244E /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		C08DE67A19B846930093244E /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		C08DE67B19B846930093244E /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Unit.h; sourceTree = "<group>"; };
+		C08DE67C19B846930093244E /* ZHFileCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHFileCache.h; sourceTree = "<group>"; };
+		C08DE67D19B846930093244E /* ZHFileCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHFileCache.m; sourceTree = "<group>"; };
+		C08DE67E19B846930093244E /* ZHm3u8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZHm3u8.h; sourceTree = "<group>"; };
+		C08DE67F19B846930093244E /* ZHm3u8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZHm3u8.m; sourceTree = "<group>"; };
+		C08DE68119B846930093244E /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
+		C08DE68219B846930093244E /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
+		C08DE68419B846930093244E /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		C08DE68519B846930093244E /* VKVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKVideoPlayer.h; sourceTree = "<group>"; };
+		C08DE68619B846930093244E /* VKVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKVideoPlayer.m; sourceTree = "<group>"; };
+		C08DE68719B846930093244E /* VKVideoPlayerAirPlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKVideoPlayerAirPlay.h; sourceTree = "<group>"; };
+		C08DE68819B846930093244E /* VKVideoPlayerAirPlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKVideoPlayerAirPlay.m; sourceTree = "<group>"; };
+		C08DE68919B846930093244E /* VKVideoPlayerCaption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKVideoPlayerCaption.h; sourceTree = "<group>"; };
+		C08DE68A19B846930093244E /* VKVideoPlayerCaption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKVideoPlayerCaption.m; sourceTree = "<group>"; };
+		C08DE68B19B846930093244E /* VKVideoPlayerCaptionSRT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKVideoPlayerCaptionSRT.h; sourceTree = "<group>"; };
+		C08DE68C19B846930093244E /* VKVideoPlayerCaptionSRT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKVideoPlayerCaptionSRT.m; sourceTree = "<group>"; };
+		C08DE68D19B846930093244E /* VKVideoPlayerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKVideoPlayerConfig.h; sourceTree = "<group>"; };
+		C08DE68E19B846930093244E /* VKVideoPlayerExternalMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKVideoPlayerExternalMonitor.h; sourceTree = "<group>"; };
+		C08DE68F19B846930093244E /* VKVideoPlayerExternalMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKVideoPlayerExternalMonitor.m; sourceTree = "<group>"; };
+		C08DE69019B846930093244E /* VKVideoPlayerLayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKVideoPlayerLayerView.h; sourceTree = "<group>"; };
+		C08DE69119B846930093244E /* VKVideoPlayerLayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKVideoPlayerLayerView.m; sourceTree = "<group>"; };
+		C08DE69219B846930093244E /* VKVideoPlayerSettingsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKVideoPlayerSettingsManager.h; sourceTree = "<group>"; };
+		C08DE69319B846930093244E /* VKVideoPlayerSettingsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKVideoPlayerSettingsManager.m; sourceTree = "<group>"; };
+		C08DE69419B846930093244E /* VKVideoPlayerTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKVideoPlayerTrack.h; sourceTree = "<group>"; };
+		C08DE69519B846930093244E /* VKVideoPlayerTrack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKVideoPlayerTrack.m; sourceTree = "<group>"; };
+		C08DE69619B846930093244E /* VKVideoPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKVideoPlayerView.h; sourceTree = "<group>"; };
+		C08DE69719B846930093244E /* VKVideoPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKVideoPlayerView.m; sourceTree = "<group>"; };
+		C08DE69819B846930093244E /* VKVideoPlayerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VKVideoPlayerView.xib; sourceTree = "<group>"; };
+		C08DE69919B846930093244E /* VKVideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VKVideoPlayerViewController.h; sourceTree = "<group>"; };
+		C08DE69A19B846930093244E /* VKVideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKVideoPlayerViewController.m; sourceTree = "<group>"; };
+		C08DE69B19B846930093244E /* VKVideoPlayerViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "VKVideoPlayerViewController~ipad.xib"; sourceTree = "<group>"; };
+		C08DE69C19B846930093244E /* VKVideoPlayerViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "VKVideoPlayerViewController~iphone.xib"; sourceTree = "<group>"; };
 		D92486162E1943FAB9D33A36 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -274,37 +356,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1B1848D018F3D8E50020F2EE /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				1B1848D118F3D8FC0020F2EE /* Caption */,
-				1B1848D218F3D90A0020F2EE /* Output */,
-			);
-			name = Extensions;
-			sourceTree = "<group>";
-		};
-		1B1848D118F3D8FC0020F2EE /* Caption */ = {
-			isa = PBXGroup;
-			children = (
-				1B1848CA18F3D7B70020F2EE /* VKVideoPlayerCaption.h */,
-				1B1848CB18F3D7B70020F2EE /* VKVideoPlayerCaption.m */,
-				1B1848D618F3DFC40020F2EE /* VKVideoPlayerCaptionSRT.h */,
-				1B1848D718F3DFC40020F2EE /* VKVideoPlayerCaptionSRT.m */,
-			);
-			name = Caption;
-			sourceTree = "<group>";
-		};
-		1B1848D218F3D90A0020F2EE /* Output */ = {
-			isa = PBXGroup;
-			children = (
-				1B1848CD18F3D8CB0020F2EE /* VKVideoPlayerExternalMonitor.h */,
-				1B1848CE18F3D8CB0020F2EE /* VKVideoPlayerExternalMonitor.m */,
-				1B1848D318F3DFA30020F2EE /* VKVideoPlayerAirPlay.h */,
-				1B1848D418F3DFA30020F2EE /* VKVideoPlayerAirPlay.m */,
-			);
-			name = Output;
-			sourceTree = "<group>";
-		};
 		1B4DA0E918F67B270009ECDF /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -317,7 +368,6 @@
 		1BB6ADAE18EE626A00767FA3 = {
 			isa = PBXGroup;
 			children = (
-				1BB6ADE918EE631300767FA3 /* Classes */,
 				1BB6ADC018EE626A00767FA3 /* VKVideoPlayerDemo */,
 				C035B77919B700A7006177B9 /* Resouces */,
 				1BB6ADF618EE66CD00767FA3 /* Assets */,
@@ -354,6 +404,7 @@
 		1BB6ADC018EE626A00767FA3 /* VKVideoPlayerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				C08DE63619B846930093244E /* Classes */,
 				1BB6ADC918EE626A00767FA3 /* VKAppDelegate.h */,
 				1BB6ADCA18EE626A00767FA3 /* VKAppDelegate.m */,
 				1BF1CCD91903A8660006FBC8 /* DemoRootViewController.h */,
@@ -402,30 +453,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1BB6ADE918EE631300767FA3 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				C0E4669A19B5BFCC0000E5E1 /* Classes */,
-				1BB6AE1F18EE690300767FA3 /* VKVideoPlayer.h */,
-				1BB6AE2018EE690300767FA3 /* VKVideoPlayer.m */,
-				1B1848D918F400640020F2EE /* VKVideoPlayerTrack.h */,
-				1B1848DA18F400640020F2EE /* VKVideoPlayerTrack.m */,
-				1BB6ADEC18EE66B000767FA3 /* VKVideoPlayerView.h */,
-				1BB6ADED18EE66B000767FA3 /* VKVideoPlayerView.m */,
-				1BB6ADEA18EE66B000767FA3 /* VKVideoPlayerView.xib */,
-				1BB6ADEF18EE66B000767FA3 /* VKVideoPlayerViewController.h */,
-				1BB6ADEB18EE66B000767FA3 /* VKVideoPlayerViewController.m */,
-				1BB9D34F18FA4A2B00568286 /* VKVideoPlayerViewController~ipad.xib */,
-				1BB9D35018FA4A2B00568286 /* VKVideoPlayerViewController~iphone.xib */,
-				1BB6AE2718EE982F00767FA3 /* FundamentalViews */,
-				1B1848D018F3D8E50020F2EE /* Extensions */,
-				1BB6AE3118EE9FFE00767FA3 /* Libs */,
-				1BB6AE2C18EE9A8000767FA3 /* Config */,
-			);
-			name = Classes;
-			path = VKVideoPlayer;
-			sourceTree = "<group>";
-		};
 		1BB6ADF618EE66CD00767FA3 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -452,32 +479,6 @@
 			);
 			name = Assets;
 			path = VKVideoPlayer;
-			sourceTree = "<group>";
-		};
-		1BB6AE2718EE982F00767FA3 /* FundamentalViews */ = {
-			isa = PBXGroup;
-			children = (
-				1BB6AE2E18EE9C9900767FA3 /* VKVideoPlayerLayerView.h */,
-				1BB6AE2F18EE9C9900767FA3 /* VKVideoPlayerLayerView.m */,
-			);
-			name = FundamentalViews;
-			sourceTree = "<group>";
-		};
-		1BB6AE2C18EE9A8000767FA3 /* Config */ = {
-			isa = PBXGroup;
-			children = (
-				1BB6AE2D18EE9AEB00767FA3 /* VKVideoPlayerConfig.h */,
-				1B1848DF18F52E8C0020F2EE /* VKVideoPlayerSettingsManager.h */,
-				1B1848E018F52E8C0020F2EE /* VKVideoPlayerSettingsManager.m */,
-			);
-			name = Config;
-			sourceTree = "<group>";
-		};
-		1BB6AE3118EE9FFE00767FA3 /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Libs;
 			sourceTree = "<group>";
 		};
 		1BB9D35418FBE16800568286 /* srt */ = {
@@ -533,24 +534,183 @@
 			path = Resouces;
 			sourceTree = "<group>";
 		};
-		C0E4669A19B5BFCC0000E5E1 /* Classes */ = {
+		C08DE63619B846930093244E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				C0E4669B19B5BFCC0000E5E1 /* Button.h */,
-				C0E4669C19B5BFCC0000E5E1 /* Button.m */,
-				C0E4669D19B5BFCC0000E5E1 /* CCLog.h */,
-				C0E4669E19B5BFCC0000E5E1 /* Common.h */,
-				C0E4669F19B5BFCC0000E5E1 /* NSString+MD5.h */,
-				C0E466A019B5BFCC0000E5E1 /* NSString+MD5.m */,
-				C0E466A119B5BFCC0000E5E1 /* UIImage+ImageEffects.h */,
-				C0E466A219B5BFCC0000E5E1 /* UIImage+ImageEffects.m */,
-				C0E466A319B5BFCC0000E5E1 /* Unit.h */,
-				C0E466A419B5BFCC0000E5E1 /* ZHFileCache.h */,
-				C0E466A519B5BFCC0000E5E1 /* ZHFileCache.m */,
-				C0E466AA19B5CA550000E5E1 /* ZHm3u8.h */,
-				C0E466AB19B5CA550000E5E1 /* ZHm3u8.m */,
+				C08DE63719B846930093244E /* Common.h */,
+				C08DE63819B846930093244E /* Model */,
+				C08DE63919B846930093244E /* Unit */,
+				C08DE68019B846930093244E /* View */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		C08DE63819B846930093244E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C08DE63919B846930093244E /* Unit */ = {
+			isa = PBXGroup;
+			children = (
+				C08DE63A19B846930093244E /* CCLog.h */,
+				C08DE63B19B846930093244E /* MagicalRecord */,
+				C08DE67719B846930093244E /* NSString+MD5.h */,
+				C08DE67819B846930093244E /* NSString+MD5.m */,
+				C08DE67919B846930093244E /* UIImage+ImageEffects.h */,
+				C08DE67A19B846930093244E /* UIImage+ImageEffects.m */,
+				C08DE67B19B846930093244E /* Unit.h */,
+				C08DE67C19B846930093244E /* ZHFileCache.h */,
+				C08DE67D19B846930093244E /* ZHFileCache.m */,
+				C08DE67E19B846930093244E /* ZHm3u8.h */,
+				C08DE67F19B846930093244E /* ZHm3u8.m */,
+			);
+			path = Unit;
+			sourceTree = "<group>";
+		};
+		C08DE63B19B846930093244E /* MagicalRecord */ = {
+			isa = PBXGroup;
+			children = (
+				C08DE63C19B846930093244E /* Categories */,
+				C08DE66619B846930093244E /* Core */,
+				C08DE67619B846930093244E /* CoreData+MagicalRecord.h */,
+			);
+			path = MagicalRecord;
+			sourceTree = "<group>";
+		};
+		C08DE63C19B846930093244E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C08DE63D19B846930093244E /* DataImport */,
+				C08DE64C19B846930093244E /* NSManagedObject */,
+				C08DE65719B846930093244E /* NSManagedObjectContext */,
+				C08DE66019B846930093244E /* NSManagedObjectModel+MagicalRecord.h */,
+				C08DE66119B846930093244E /* NSManagedObjectModel+MagicalRecord.m */,
+				C08DE66219B846930093244E /* NSPersistentStore+MagicalRecord.h */,
+				C08DE66319B846930093244E /* NSPersistentStore+MagicalRecord.m */,
+				C08DE66419B846930093244E /* NSPersistentStoreCoordinator+MagicalRecord.h */,
+				C08DE66519B846930093244E /* NSPersistentStoreCoordinator+MagicalRecord.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		C08DE63D19B846930093244E /* DataImport */ = {
+			isa = PBXGroup;
+			children = (
+				C08DE63E19B846930093244E /* MagicalImportFunctions.h */,
+				C08DE63F19B846930093244E /* MagicalImportFunctions.m */,
+				C08DE64019B846930093244E /* NSAttributeDescription+MagicalDataImport.h */,
+				C08DE64119B846930093244E /* NSAttributeDescription+MagicalDataImport.m */,
+				C08DE64219B846930093244E /* NSEntityDescription+MagicalDataImport.h */,
+				C08DE64319B846930093244E /* NSEntityDescription+MagicalDataImport.m */,
+				C08DE64419B846930093244E /* NSNumber+MagicalDataImport.h */,
+				C08DE64519B846930093244E /* NSNumber+MagicalDataImport.m */,
+				C08DE64619B846930093244E /* NSObject+MagicalDataImport.h */,
+				C08DE64719B846930093244E /* NSObject+MagicalDataImport.m */,
+				C08DE64819B846930093244E /* NSRelationshipDescription+MagicalDataImport.h */,
+				C08DE64919B846930093244E /* NSRelationshipDescription+MagicalDataImport.m */,
+				C08DE64A19B846930093244E /* NSString+MagicalDataImport.h */,
+				C08DE64B19B846930093244E /* NSString+MagicalDataImport.m */,
+			);
+			path = DataImport;
+			sourceTree = "<group>";
+		};
+		C08DE64C19B846930093244E /* NSManagedObject */ = {
+			isa = PBXGroup;
+			children = (
+				C08DE64D19B846930093244E /* NSManagedObject+MagicalAggregation.h */,
+				C08DE64E19B846930093244E /* NSManagedObject+MagicalAggregation.m */,
+				C08DE64F19B846930093244E /* NSManagedObject+MagicalDataImport.h */,
+				C08DE65019B846930093244E /* NSManagedObject+MagicalDataImport.m */,
+				C08DE65119B846930093244E /* NSManagedObject+MagicalFinders.h */,
+				C08DE65219B846930093244E /* NSManagedObject+MagicalFinders.m */,
+				C08DE65319B846930093244E /* NSManagedObject+MagicalRecord.h */,
+				C08DE65419B846930093244E /* NSManagedObject+MagicalRecord.m */,
+				C08DE65519B846930093244E /* NSManagedObject+MagicalRequests.h */,
+				C08DE65619B846930093244E /* NSManagedObject+MagicalRequests.m */,
+			);
+			path = NSManagedObject;
+			sourceTree = "<group>";
+		};
+		C08DE65719B846930093244E /* NSManagedObjectContext */ = {
+			isa = PBXGroup;
+			children = (
+				C08DE65819B846930093244E /* NSManagedObjectContext+MagicalObserving.h */,
+				C08DE65919B846930093244E /* NSManagedObjectContext+MagicalObserving.m */,
+				C08DE65A19B846930093244E /* NSManagedObjectContext+MagicalRecord.h */,
+				C08DE65B19B846930093244E /* NSManagedObjectContext+MagicalRecord.m */,
+				C08DE65C19B846930093244E /* NSManagedObjectContext+MagicalSaves.h */,
+				C08DE65D19B846930093244E /* NSManagedObjectContext+MagicalSaves.m */,
+				C08DE65E19B846930093244E /* NSManagedObjectContext+MagicalThreading.h */,
+				C08DE65F19B846930093244E /* NSManagedObjectContext+MagicalThreading.m */,
+			);
+			path = NSManagedObjectContext;
+			sourceTree = "<group>";
+		};
+		C08DE66619B846930093244E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				C08DE66719B846930093244E /* MagicalRecord+Actions.h */,
+				C08DE66819B846930093244E /* MagicalRecord+Actions.m */,
+				C08DE66919B846930093244E /* MagicalRecord+ErrorHandling.h */,
+				C08DE66A19B846930093244E /* MagicalRecord+ErrorHandling.m */,
+				C08DE66B19B846930093244E /* MagicalRecord+iCloud.h */,
+				C08DE66C19B846930093244E /* MagicalRecord+iCloud.m */,
+				C08DE66D19B846930093244E /* MagicalRecord+Options.h */,
+				C08DE66E19B846930093244E /* MagicalRecord+Options.m */,
+				C08DE66F19B846930093244E /* MagicalRecord+Setup.h */,
+				C08DE67019B846930093244E /* MagicalRecord+Setup.m */,
+				C08DE67119B846930093244E /* MagicalRecord+ShorthandSupport.h */,
+				C08DE67219B846930093244E /* MagicalRecord+ShorthandSupport.m */,
+				C08DE67319B846930093244E /* MagicalRecord.h */,
+				C08DE67419B846930093244E /* MagicalRecord.m */,
+				C08DE67519B846930093244E /* MagicalRecordShorthand.h */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		C08DE68019B846930093244E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C08DE68119B846930093244E /* Button.h */,
+				C08DE68219B846930093244E /* Button.m */,
+				C08DE68319B846930093244E /* VKVideoPlayer */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C08DE68319B846930093244E /* VKVideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				C08DE68419B846930093244E /* .gitkeep */,
+				C08DE68519B846930093244E /* VKVideoPlayer.h */,
+				C08DE68619B846930093244E /* VKVideoPlayer.m */,
+				C08DE68719B846930093244E /* VKVideoPlayerAirPlay.h */,
+				C08DE68819B846930093244E /* VKVideoPlayerAirPlay.m */,
+				C08DE68919B846930093244E /* VKVideoPlayerCaption.h */,
+				C08DE68A19B846930093244E /* VKVideoPlayerCaption.m */,
+				C08DE68B19B846930093244E /* VKVideoPlayerCaptionSRT.h */,
+				C08DE68C19B846930093244E /* VKVideoPlayerCaptionSRT.m */,
+				C08DE68D19B846930093244E /* VKVideoPlayerConfig.h */,
+				C08DE68E19B846930093244E /* VKVideoPlayerExternalMonitor.h */,
+				C08DE68F19B846930093244E /* VKVideoPlayerExternalMonitor.m */,
+				C08DE69019B846930093244E /* VKVideoPlayerLayerView.h */,
+				C08DE69119B846930093244E /* VKVideoPlayerLayerView.m */,
+				C08DE69219B846930093244E /* VKVideoPlayerSettingsManager.h */,
+				C08DE69319B846930093244E /* VKVideoPlayerSettingsManager.m */,
+				C08DE69419B846930093244E /* VKVideoPlayerTrack.h */,
+				C08DE69519B846930093244E /* VKVideoPlayerTrack.m */,
+				C08DE69619B846930093244E /* VKVideoPlayerView.h */,
+				C08DE69719B846930093244E /* VKVideoPlayerView.m */,
+				C08DE69819B846930093244E /* VKVideoPlayerView.xib */,
+				C08DE69919B846930093244E /* VKVideoPlayerViewController.h */,
+				C08DE69A19B846930093244E /* VKVideoPlayerViewController.m */,
+				C08DE69B19B846930093244E /* VKVideoPlayerViewController~ipad.xib */,
+				C08DE69C19B846930093244E /* VKVideoPlayerViewController~iphone.xib */,
+			);
+			path = VKVideoPlayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -638,19 +798,19 @@
 				1BB6ADC518EE626A00767FA3 /* InfoPlist.strings in Resources */,
 				1BA61FCF18FD231D000DDB94 /* VKVideoPlayer_play_big@2x.png in Resources */,
 				1BA61FD418FD231D000DDB94 /* VKVideoPlayer_zoom_in.png in Resources */,
+				C08DE6C819B846930093244E /* VKVideoPlayerViewController~ipad.xib in Resources */,
 				1BA61FC918FD231D000DDB94 /* VKVideoPlayer_next@2x.png in Resources */,
-				1BB9D35218FA4A2B00568286 /* VKVideoPlayerViewController~iphone.xib in Resources */,
 				C035B7BD19B700A7006177B9 /* 音量总长度 in Resources */,
 				C035B7A619B700A7006177B9 /* qingchu_cache@2x.png in Resources */,
 				C035B7B019B700A7006177B9 /* 下载@2x.png in Resources */,
 				C035B7B619B700A7006177B9 /* 暂停@2x.png in Resources */,
-				1BB6ADF118EE66B000767FA3 /* VKVideoPlayerView.xib in Resources */,
 				C035B7B219B700A7006177B9 /* 前进30秒.png in Resources */,
 				C035B7A719B700A7006177B9 /* qingkong@2x.png in Resources */,
 				C035B7B319B700A7006177B9 /* 后退30秒.png in Resources */,
 				1BA61FCA18FD231D000DDB94 /* VKVideoPlayer_pause_big.png in Resources */,
 				1BA61FD518FD231D000DDB94 /* VKVideoPlayer_zoom_in@2x.png in Resources */,
 				1BA61FC818FD231D000DDB94 /* VKVideoPlayer_next.png in Resources */,
+				C08DE6C619B846930093244E /* VKVideoPlayerView.xib in Resources */,
 				1BA61FC518FD231D000DDB94 /* VKVideoPlayer_close@2x.png in Resources */,
 				C035B7BA19B700A7006177B9 /* 视频已缓存进度.png in Resources */,
 				1B2060311904257500E11467 /* Japanese.srt in Resources */,
@@ -667,7 +827,6 @@
 				C035B7AE19B700A7006177B9 /* 上方系统信息显示区域.png in Resources */,
 				C035B7A319B700A7006177B9 /* meize@2x.png in Resources */,
 				C035B7AF19B700A7006177B9 /* 下方操控区域.png in Resources */,
-				1BB9D35118FA4A2B00568286 /* VKVideoPlayerViewController~ipad.xib in Resources */,
 				C035B7A919B700A7006177B9 /* tickets_cell_bg@2x.png in Resources */,
 				C035B7AC19B700A7006177B9 /* zuijin_list@2x.png in Resources */,
 				C035B7B419B700A7006177B9 /* 已调整音量.png in Resources */,
@@ -685,6 +844,8 @@
 				1BA61FD318FD231D000DDB94 /* VKVideoPlayer_rewind@2x.png in Resources */,
 				1BB6ADCD18EE626A00767FA3 /* Images.xcassets in Resources */,
 				C035B7A119B700A7006177B9 /* faxian@2x.png in Resources */,
+				C08DE6BC19B846930093244E /* .gitkeep in Resources */,
+				C08DE6C919B846930093244E /* VKVideoPlayerViewController~iphone.xib in Resources */,
 				C035B7B819B700A7006177B9 /* 版权声明.png in Resources */,
 				1BA61FD618FD231D000DDB94 /* VKVideoPlayer_zoom_out.png in Resources */,
 				1BA61FCE18FD231D000DDB94 /* VKVideoPlayer_play_big.png in Resources */,
@@ -783,27 +944,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B1848E118F52E8C0020F2EE /* VKVideoPlayerSettingsManager.m in Sources */,
-				1B1848D518F3DFA30020F2EE /* VKVideoPlayerAirPlay.m in Sources */,
-				1B1848CF18F3D8CB0020F2EE /* VKVideoPlayerExternalMonitor.m in Sources */,
-				1BB6AE3018EE9C9900767FA3 /* VKVideoPlayerLayerView.m in Sources */,
-				C0E466A719B5BFCC0000E5E1 /* NSString+MD5.m in Sources */,
-				1BB6AE2118EE690300767FA3 /* VKVideoPlayer.m in Sources */,
-				C0E466AC19B5CA550000E5E1 /* ZHm3u8.m in Sources */,
 				1BB6ADC718EE626A00767FA3 /* main.m in Sources */,
-				1B1848DB18F400640020F2EE /* VKVideoPlayerTrack.m in Sources */,
-				C0E466A919B5BFCC0000E5E1 /* ZHFileCache.m in Sources */,
-				1B1848CC18F3D7B70020F2EE /* VKVideoPlayerCaption.m in Sources */,
+				C08DE6C719B846930093244E /* VKVideoPlayerViewController.m in Sources */,
+				C08DE6A419B846930093244E /* NSManagedObject+MagicalAggregation.m in Sources */,
+				C08DE69F19B846930093244E /* NSEntityDescription+MagicalDataImport.m in Sources */,
+				C08DE6C019B846930093244E /* VKVideoPlayerCaptionSRT.m in Sources */,
+				C08DE6AB19B846930093244E /* NSManagedObjectContext+MagicalSaves.m in Sources */,
+				C08DE6AA19B846930093244E /* NSManagedObjectContext+MagicalRecord.m in Sources */,
+				C08DE6B219B846930093244E /* MagicalRecord+iCloud.m in Sources */,
+				C08DE6B019B846930093244E /* MagicalRecord+Actions.m in Sources */,
+				C08DE6A519B846930093244E /* NSManagedObject+MagicalDataImport.m in Sources */,
+				C08DE6A319B846930093244E /* NSString+MagicalDataImport.m in Sources */,
+				C08DE6B519B846930093244E /* MagicalRecord+ShorthandSupport.m in Sources */,
+				C08DE6B419B846930093244E /* MagicalRecord+Setup.m in Sources */,
+				C08DE6BD19B846930093244E /* VKVideoPlayer.m in Sources */,
 				1B53AC3D1916732200E1B484 /* DemoHTTPStreamingServer.m in Sources */,
 				1BF1CCDB1903A8660006FBC8 /* DemoRootViewController.m in Sources */,
-				1BB6ADF218EE66B000767FA3 /* VKVideoPlayerViewController.m in Sources */,
-				1BB6ADF318EE66B000767FA3 /* VKVideoPlayerView.m in Sources */,
+				C08DE6AC19B846930093244E /* NSManagedObjectContext+MagicalThreading.m in Sources */,
 				1BA61F9718FCCB6D000DDB94 /* DemoVideoPlayerViewController.m in Sources */,
-				C0E466A819B5BFCC0000E5E1 /* UIImage+ImageEffects.m in Sources */,
+				C08DE6B719B846930093244E /* NSString+MD5.m in Sources */,
+				C08DE6B819B846930093244E /* UIImage+ImageEffects.m in Sources */,
+				C08DE6A619B846930093244E /* NSManagedObject+MagicalFinders.m in Sources */,
+				C08DE6AD19B846930093244E /* NSManagedObjectModel+MagicalRecord.m in Sources */,
+				C08DE69E19B846930093244E /* NSAttributeDescription+MagicalDataImport.m in Sources */,
+				C08DE6C319B846930093244E /* VKVideoPlayerSettingsManager.m in Sources */,
+				C08DE69D19B846930093244E /* MagicalImportFunctions.m in Sources */,
+				C08DE6BE19B846930093244E /* VKVideoPlayerAirPlay.m in Sources */,
+				C08DE6BB19B846930093244E /* Button.m in Sources */,
+				C08DE6A019B846930093244E /* NSNumber+MagicalDataImport.m in Sources */,
+				C08DE6A719B846930093244E /* NSManagedObject+MagicalRecord.m in Sources */,
+				C08DE6B319B846930093244E /* MagicalRecord+Options.m in Sources */,
+				C08DE6AE19B846930093244E /* NSPersistentStore+MagicalRecord.m in Sources */,
+				C08DE6BF19B846930093244E /* VKVideoPlayerCaption.m in Sources */,
+				C08DE6B619B846930093244E /* MagicalRecord.m in Sources */,
+				C08DE6B919B846930093244E /* ZHFileCache.m in Sources */,
 				C035B77819B6FFE9006177B9 /* SettingViewController.m in Sources */,
+				C08DE6C419B846930093244E /* VKVideoPlayerTrack.m in Sources */,
+				C08DE6AF19B846930093244E /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
+				C08DE6A219B846930093244E /* NSRelationshipDescription+MagicalDataImport.m in Sources */,
+				C08DE6BA19B846930093244E /* ZHm3u8.m in Sources */,
+				C08DE6C219B846930093244E /* VKVideoPlayerLayerView.m in Sources */,
+				C08DE6A119B846930093244E /* NSObject+MagicalDataImport.m in Sources */,
+				C08DE6A819B846930093244E /* NSManagedObject+MagicalRequests.m in Sources */,
 				1BB6ADCB18EE626A00767FA3 /* VKAppDelegate.m in Sources */,
-				1B1848D818F3DFC40020F2EE /* VKVideoPlayerCaptionSRT.m in Sources */,
-				C0E466A619B5BFCC0000E5E1 /* Button.m in Sources */,
+				C08DE6C519B846930093244E /* VKVideoPlayerView.m in Sources */,
+				C08DE6C119B846930093244E /* VKVideoPlayerExternalMonitor.m in Sources */,
+				C08DE6A919B846930093244E /* NSManagedObjectContext+MagicalObserving.m in Sources */,
+				C08DE6B119B846930093244E /* MagicalRecord+ErrorHandling.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

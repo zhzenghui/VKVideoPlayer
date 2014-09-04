@@ -8,13 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+@class DownloadList;
 @interface ZHm3u8 : NSObject <UIWebViewDelegate>
 {
     UIWebView *_webView;
 }
 
 
-- (void)loadM3u8File:(NSURL *)url;
+@property (nonatomic, strong) DownloadList *downloadList;
+
+
+- (void)loadM3u8File;
 
 
 

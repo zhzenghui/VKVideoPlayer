@@ -7,6 +7,7 @@
 #import "VKVideoPlayer.h"
 #import "VKVideoPlayerCaptionSRT.h"
 #import "ZHm3u8.h"
+#import "DownLoadList.h"
 
 
 @interface DemoVideoPlayerViewController ()
@@ -18,7 +19,11 @@
 - (void)downloadVideo
 {
     ZHm3u8 *m3u = [[ZHm3u8 alloc] init];
-    [m3u loadM3u8File:self.url];
+    m3u.downloadList = self.downloadList;
+
+    [m3u loadM3u8File];
+    
+    
 }
 
 - (void)viewDidLoad {
@@ -37,7 +42,7 @@
 - (void)viewDidAppear:(BOOL)animated {
   [self playSampleClip1];
     
-    [self downloadVideo];
+//    [self downloadVideo];
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -50,19 +55,14 @@
 
 - (void)playSampleClip1 {
 
-    [self playStream:self.url];
-  
     
+    NSURL *url = [NSURL URLWithString:self.downloadList.url];
+    [self playStream:url];
 
-//  [self setLanguageCode:@"JP"];
-//  [self.player setCaptionToTop:[self testCaption:@"testCaptionTop"]];
 }
 - (void)playSampleClip2 {
-//  [self playStream:[NSURL URLWithString:@"http://devimages.apple.com/samplecode/adDemo/ad.m3u8"]];
-    [self playStream:[NSURL URLWithString:@"http://localhost:12345/m3u8-1.m3u"]];
 
-  [self setLanguageCode:@"JP"];
-  [self.player setCaptionToTop:[self testCaption:@"testCaptionTop"]];
+    [self playStream:[NSURL URLWithString:@"http://localhost:12345/m3u8-1.m3u"]];
 }
 
 - (void)playStream:(NSURL*)url {
@@ -93,6 +93,9 @@
   [playSample2Button setTitle:@"local" forState:UIControlStateNormal];
   [playSample2Button addTarget:self action:@selector(playSampleClip2) forControlEvents:UIControlEventTouchUpInside];
   [self.player.view addSubviewForControl:playSample2Button];
+    
+    
+//    [Button share] addToView:<#(UIView *)#> addTarget:<#(id)#> rect:<#(CGRect)#> tag:<#(int)#> action:<#(SEL)#>
 }
 
 #pragma mark - VKVideoPlayerControllerDelegate

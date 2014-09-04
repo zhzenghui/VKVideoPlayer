@@ -6,6 +6,7 @@
 #import <UIKit/UIKit.h>
 #import "VKVideoPlayer.h"
 
+@class DownloadList;
 @interface DemoVideoPlayerViewController : UIViewController<
   VKVideoPlayerDelegate, UIWebViewDelegate
 >
@@ -14,7 +15,7 @@
 
 @property (nonatomic, strong) VKVideoPlayer* player;
 
-@property (nonatomic, strong) NSURL *url;
+@property (nonatomic, strong) DownloadList *downloadList;
 
 
 

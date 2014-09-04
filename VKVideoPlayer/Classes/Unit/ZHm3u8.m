@@ -8,6 +8,8 @@
 
 #import "ZHm3u8.h"
 #import "AFNetworking.h"
+#import "DownloadList.h"
+
 
 @interface ZHm3u8 ()
 {
@@ -107,8 +109,10 @@
 
 }
 
-- (void)loadM3u8File:(NSURL *)url
+- (void)loadM3u8File
 {
+    
+    NSURL *url = [NSURL URLWithString:self.downloadList.url];
     __block NSString *m3uString;
     dispatch_queue_t queue = dispatch_queue_create("com.ple.queue", NULL);
     dispatch_async(queue, ^(void) {

@@ -134,6 +134,8 @@
 		C08DE6C719B846930093244E /* VKVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE69A19B846930093244E /* VKVideoPlayerViewController.m */; };
 		C08DE6C819B846930093244E /* VKVideoPlayerViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08DE69B19B846930093244E /* VKVideoPlayerViewController~ipad.xib */; };
 		C08DE6C919B846930093244E /* VKVideoPlayerViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08DE69C19B846930093244E /* VKVideoPlayerViewController~iphone.xib */; };
+		C08DE6CC19B849080093244E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6CA19B849080093244E /* Model.xcdatamodeld */; };
+		C08DE6CF19B850770093244E /* DownloadList.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6CE19B850770093244E /* DownloadList.m */; };
 		D1C3D9DF54424BFB8D408C64 /* libPods-VKVideoPlayerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 150BEB98AFEA4FF199BA4AA6 /* libPods-VKVideoPlayerTests.a */; };
 /* End PBXBuildFile section */
 
@@ -327,6 +329,9 @@
 		C08DE69A19B846930093244E /* VKVideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VKVideoPlayerViewController.m; sourceTree = "<group>"; };
 		C08DE69B19B846930093244E /* VKVideoPlayerViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "VKVideoPlayerViewController~ipad.xib"; sourceTree = "<group>"; };
 		C08DE69C19B846930093244E /* VKVideoPlayerViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "VKVideoPlayerViewController~iphone.xib"; sourceTree = "<group>"; };
+		C08DE6CB19B849080093244E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		C08DE6CD19B850770093244E /* DownloadList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadList.h; sourceTree = "<group>"; };
+		C08DE6CE19B850770093244E /* DownloadList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadList.m; sourceTree = "<group>"; };
 		D92486162E1943FAB9D33A36 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -548,6 +553,9 @@
 		C08DE63819B846930093244E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C08DE6CA19B849080093244E /* Model.xcdatamodeld */,
+				C08DE6CD19B850770093244E /* DownloadList.h */,
+				C08DE6CE19B850770093244E /* DownloadList.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -955,6 +963,7 @@
 				C08DE6B019B846930093244E /* MagicalRecord+Actions.m in Sources */,
 				C08DE6A519B846930093244E /* NSManagedObject+MagicalDataImport.m in Sources */,
 				C08DE6A319B846930093244E /* NSString+MagicalDataImport.m in Sources */,
+				C08DE6CC19B849080093244E /* Model.xcdatamodeld in Sources */,
 				C08DE6B519B846930093244E /* MagicalRecord+ShorthandSupport.m in Sources */,
 				C08DE6B419B846930093244E /* MagicalRecord+Setup.m in Sources */,
 				C08DE6BD19B846930093244E /* VKVideoPlayer.m in Sources */,
@@ -978,6 +987,7 @@
 				C08DE6BF19B846930093244E /* VKVideoPlayerCaption.m in Sources */,
 				C08DE6B619B846930093244E /* MagicalRecord.m in Sources */,
 				C08DE6B919B846930093244E /* ZHFileCache.m in Sources */,
+				C08DE6CF19B850770093244E /* DownloadList.m in Sources */,
 				C035B77819B6FFE9006177B9 /* SettingViewController.m in Sources */,
 				C08DE6C419B846930093244E /* VKVideoPlayerTrack.m in Sources */,
 				C08DE6AF19B846930093244E /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
@@ -1223,6 +1233,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C08DE6CA19B849080093244E /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C08DE6CB19B849080093244E /* Model.xcdatamodel */,
+			);
+			currentVersion = C08DE6CB19B849080093244E /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1BB6ADAF18EE626A00767FA3 /* Project object */;
 }

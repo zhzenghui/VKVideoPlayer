@@ -91,7 +91,7 @@ typedef enum {
     self.dataMArray = [[NSMutableArray alloc] init];
     self.dataMDict = [[NSMutableDictionary alloc] init];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doubelClicked)name:@"doubelClicked"object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(doubelClicked)name:@"doubelClicked"object:nil];
     
     
     
@@ -117,6 +117,12 @@ typedef enum {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor blackColor];
     
+    
+    
+    
+//    self.dataMArray = [[NSMutableArray alloc] initWithArray: [Note findByAttribute:@"cstm_id"
+//                                                                         withValue:self.customer.customer_id
+//                                                                        andOrderBy:@"update_time" ascending:NO]];
     
     
     
@@ -314,7 +320,7 @@ typedef enum {
     
     
     SettingViewController *vc = [[SettingViewController alloc] init];
-    //    vc.image = imageView.image;
+    vc.view.backgroundColor = [UIColor colorWithPatternImage:imageView.image];
     
     [self addChildViewController:vc];
     [self.view addSubview:vc.view];

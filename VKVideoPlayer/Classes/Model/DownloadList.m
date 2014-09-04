@@ -19,5 +19,7 @@
 @dynamic files;
 @dynamic playTime;
 @dynamic playAndDownload;
+@dynamic viewCount;
+
 
 @end

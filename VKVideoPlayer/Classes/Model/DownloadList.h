@@ -21,6 +21,7 @@
 @property (nonatomic, retain) NSNumber * playTime;      //  当前的播放进度
 @property (nonatomic, retain) NSNumber * playAndDownload;  //  允许在播放的时候下载视频
 
+@property (nonatomic, retain) NSNumber * viewCount;  //  允许在播放的时候下载视频
 
 
 @end

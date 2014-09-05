@@ -18,10 +18,22 @@
 
 - (void)downloadVideo
 {
+    
+    
+
+    if (self.downloadList.status != 0) {
+//      提醒 已经下载
+        
+//        return;
+    }
+
+
     ZHm3u8 *m3u = [[ZHm3u8 alloc] init];
     m3u.downloadList = self.downloadList;
 
     [m3u loadM3u8File];
+    
+    
     
     
 }
@@ -37,12 +49,24 @@
   [self.view addSubview:self.player.view];
   
   [self addDemoControl];
+    
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-  [self playSampleClip1];
     
-//    [self downloadVideo];
+    
+
+    
+    if ( [self.downloadList.status intValue] == 2 ) {
+        
+
+        [self playSampleClip2];
+    }
+    else {
+        [self playSampleClip1];
+    }
 }
 
 - (BOOL)prefersStatusBarHidden {
@@ -55,14 +79,13 @@
 
 - (void)playSampleClip1 {
 
-    
     NSURL *url = [NSURL URLWithString:self.downloadList.url];
     [self playStream:url];
-
 }
 - (void)playSampleClip2 {
 
-    [self playStream:[NSURL URLWithString:@"http://localhost:12345/m3u8-1.m3u"]];
+    NSString *str = [NSString stringWithFormat:@"http://localhost:12345/%@/m3u8.m3u", self.downloadList.identity];
+    [self playStream:[NSURL URLWithString: str ]];
 }
 
 - (void)playStream:(NSURL*)url {
@@ -94,8 +117,16 @@
   [playSample2Button addTarget:self action:@selector(playSampleClip2) forControlEvents:UIControlEventTouchUpInside];
   [self.player.view addSubviewForControl:playSample2Button];
     
+
     
-//    [Button share] addToView:<#(UIView *)#> addTarget:<#(id)#> rect:<#(CGRect)#> tag:<#(int)#> action:<#(SEL)#>
+    
+    UIButton *xiazaiButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    xiazaiButton.frame = CGRectMake(150,40,80,40);
+    [xiazaiButton setTitle:@"下载" forState:UIControlStateNormal];
+    [xiazaiButton addTarget:self action:@selector(downloadVideo) forControlEvents:UIControlEventTouchUpInside];
+    [self.player.view addSubviewForControl:xiazaiButton];
+
+    
 }
 
 #pragma mark - VKVideoPlayerControllerDelegate

@@ -135,13 +135,13 @@
 		C08DE6C819B846930093244E /* VKVideoPlayerViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08DE69B19B846930093244E /* VKVideoPlayerViewController~ipad.xib */; };
 		C08DE6C919B846930093244E /* VKVideoPlayerViewController~iphone.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08DE69C19B846930093244E /* VKVideoPlayerViewController~iphone.xib */; };
 		C08DE6CC19B849080093244E /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6CA19B849080093244E /* Model.xcdatamodeld */; };
-		C08DE6CF19B850770093244E /* DownloadList.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6CE19B850770093244E /* DownloadList.m */; };
 		C08DE6D219B85EE10093244E /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6D119B85EE10093244E /* RecommendViewController.m */; };
 		C08DE6D519B85F150093244E /* ZuiJinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6D419B85F150093244E /* ZuiJinViewController.m */; };
 		C08DE6D819B85F230093244E /* MianZeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6D719B85F230093244E /* MianZeViewController.m */; };
 		C08DE6DB19B85F2F0093244E /* DownLoadListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6DA19B85F2F0093244E /* DownLoadListViewController.m */; };
 		C08DE6DE19B85F3B0093244E /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6DD19B85F3B0093244E /* AboutViewController.m */; };
 		C08DE6E119B860A70093244E /* AllBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6E019B860A70093244E /* AllBaseViewController.m */; };
+		C0E2EC2C19B999AD00741FD1 /* DownloadList.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E2EC2B19B999AD00741FD1 /* DownloadList.m */; };
 		D1C3D9DF54424BFB8D408C64 /* libPods-VKVideoPlayerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 150BEB98AFEA4FF199BA4AA6 /* libPods-VKVideoPlayerTests.a */; };
 /* End PBXBuildFile section */
 
@@ -336,8 +336,6 @@
 		C08DE69B19B846930093244E /* VKVideoPlayerViewController~ipad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "VKVideoPlayerViewController~ipad.xib"; sourceTree = "<group>"; };
 		C08DE69C19B846930093244E /* VKVideoPlayerViewController~iphone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "VKVideoPlayerViewController~iphone.xib"; sourceTree = "<group>"; };
 		C08DE6CB19B849080093244E /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		C08DE6CD19B850770093244E /* DownloadList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadList.h; sourceTree = "<group>"; };
-		C08DE6CE19B850770093244E /* DownloadList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadList.m; sourceTree = "<group>"; };
 		C08DE6D019B85EE10093244E /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
 		C08DE6D119B85EE10093244E /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
 		C08DE6D319B85F150093244E /* ZuiJinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZuiJinViewController.h; sourceTree = "<group>"; };
@@ -350,6 +348,8 @@
 		C08DE6DD19B85F3B0093244E /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		C08DE6DF19B860A70093244E /* AllBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllBaseViewController.h; sourceTree = "<group>"; };
 		C08DE6E019B860A70093244E /* AllBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllBaseViewController.m; sourceTree = "<group>"; };
+		C0E2EC2A19B999AD00741FD1 /* DownloadList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadList.h; sourceTree = "<group>"; };
+		C0E2EC2B19B999AD00741FD1 /* DownloadList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadList.m; sourceTree = "<group>"; };
 		D92486162E1943FAB9D33A36 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -581,9 +581,9 @@
 		C08DE63819B846930093244E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C0E2EC2A19B999AD00741FD1 /* DownloadList.h */,
+				C0E2EC2B19B999AD00741FD1 /* DownloadList.m */,
 				C08DE6CA19B849080093244E /* Model.xcdatamodeld */,
-				C08DE6CD19B850770093244E /* DownloadList.h */,
-				C08DE6CE19B850770093244E /* DownloadList.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1021,9 +1021,9 @@
 				C08DE6AE19B846930093244E /* NSPersistentStore+MagicalRecord.m in Sources */,
 				C08DE6BF19B846930093244E /* VKVideoPlayerCaption.m in Sources */,
 				C08DE6E119B860A70093244E /* AllBaseViewController.m in Sources */,
+				C0E2EC2C19B999AD00741FD1 /* DownloadList.m in Sources */,
 				C08DE6B619B846930093244E /* MagicalRecord.m in Sources */,
 				C08DE6B919B846930093244E /* ZHFileCache.m in Sources */,
-				C08DE6CF19B850770093244E /* DownloadList.m in Sources */,
 				C035B77819B6FFE9006177B9 /* SettingViewController.m in Sources */,
 				C08DE6C419B846930093244E /* VKVideoPlayerTrack.m in Sources */,
 				C08DE6AF19B846930093244E /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
@@ -1180,12 +1180,15 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Beijing Vision Bejoy Media Technology Co., Ltd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Beijing Vision Bejoy Media Technology Co., Ltd";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "VKVideoPlayer/VKVideoPlayer-Prefix.pch";
 				INFOPLIST_FILE = "VKVideoPlayer/VKVideoPlayer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2F6DB9F6-0B65-4C74-8351-A46E20ED2454";
 				USER_HEADER_SEARCH_PATHS = "\"${SRCROOT}/Classes/\"";
 				WRAPPER_EXTENSION = app;
 			};

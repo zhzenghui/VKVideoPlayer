@@ -307,6 +307,8 @@ typedef enum {
         dlist =  resArray[0];
         int i = [dlist.viewCount intValue];
         i++;
+
+        dlist.update = [NSDate date];
         dlist.viewCount = [NSNumber numberWithInt:i];
 
     }
@@ -314,7 +316,7 @@ typedef enum {
         dlist = [DownloadList createEntity];
         dlist.title =  dict[@"title"];
         dlist.identity = [NSNumber numberWithInt:[ dict[@"id"] intValue]];
-        dlist.status = @1;
+        dlist.status = @0;
         dlist.url = dict[@"url"];
         
         dlist.currentIndex = @0;
@@ -322,22 +324,29 @@ typedef enum {
         dlist.viewCount = @1;
         dlist.playTime = @0.0;
         dlist.playAndDownload = @0;
+        dlist.createDate = [NSDate date];
+        dlist.update = [NSDate date];
         
 
     }    
-    [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:nil];
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+        
+        if (success) {
+            //    打开play页面
+            
+            DLog(@"%@", dict[@"url"]);
+            DemoVideoPlayerViewController *viewController = [[DemoVideoPlayerViewController alloc] init];
+            
+            viewController.downloadList = dlist;
+            
+            [self presentViewController:viewController animated:YES completion:^{
+                
+            }];
+
+        }
+    }];
 
     
-//    打开play页面
-
-    DLog(@"%@", dict[@"url"]);
-    DemoVideoPlayerViewController *viewController = [[DemoVideoPlayerViewController alloc] init];
-
-    viewController.downloadList = dlist;
-
-    [self presentViewController:viewController animated:YES completion:^{
-        
-    }];
 
 
 }

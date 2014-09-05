@@ -58,7 +58,9 @@
 
     
 //    写入文件
-    NSString *m3uPath = KCachesName(@"m3u8-1.m3u");
+    NSString *str = [NSString stringWithFormat:@"%@/m3u8.m3u", self.downloadList.identity];
+
+    NSString *m3uPath = KCachesName(str);
     
     [string writeToFile:m3uPath atomically:YES encoding:NSUTF8StringEncoding error:nil];
     
@@ -102,6 +104,12 @@
     
     
     
+    self.downloadList.status = @1;
+    self.downloadList.files = [NSNumber numberWithInt: extinfDurationArray.count];
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:nil];
+
+    
+    
     
     [self reBuildM3uExtinfDurationArray:extinfDurationArray urlArray:urlArray];
     
@@ -109,10 +117,45 @@
 
 }
 
+- (void)createDir
+{
+    
+    NSString *str = [NSString stringWithFormat:@"%@/", self.downloadList.identity];
+    NSString *path = KCachesName(str);
+    
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+
+    
+    
+    
+
+    
+    
+    BOOL isDir = NO;
+    if (![fileManager fileExistsAtPath:path isDirectory:&isDir])
+    {
+        [fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    else if (!isDir)
+    {
+        NSLog(@"Cannot proceed!");
+        // Throw exception
+    }
+    
+    
+    
+}
+
 - (void)loadM3u8File
 {
     
     NSURL *url = [NSURL URLWithString:self.downloadList.url];
+    
+    
+//   创建文件夹
+    [self createDir];
+    
     __block NSString *m3uString;
     dispatch_queue_t queue = dispatch_queue_create("com.ple.queue", NULL);
     dispatch_async(queue, ^(void) {
@@ -155,9 +198,6 @@
     
     index ++;
 
- 
-    
-  
 
     
     dispatch_queue_t queue = dispatch_queue_create("com.ple.queue", NULL);
@@ -168,11 +208,27 @@
         NSData *data = [NSData dataWithContentsOfURL:url];
         
         
-        NSString *str = [NSString stringWithFormat:@"%i.ts", index];
+        NSString *str = [NSString stringWithFormat:@"%@/%i.ts", self.downloadList.identity, index];
+        
+        
         NSString *tsPath = KCachesName(str);
         
+        
+        
+        
+        
         if ( data ) {
-            DLog(@"%i", index);
+            DLog(@"currentIndex  : %i", index);
+        
+//            更新下载索引
+            self.downloadList.currentIndex = [NSNumber numberWithInt: index];
+            
+            if ([self.downloadList.currentIndex intValue] == [self.downloadList.files intValue]) {
+                self.downloadList.status = [NSNumber numberWithInt: 2 ];
+            }
+            
+            [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:nil];
+            
             [data writeToFile:tsPath atomically:YES];
         }
         else {

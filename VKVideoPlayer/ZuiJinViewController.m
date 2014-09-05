@@ -7,6 +7,9 @@
 //
 
 #import "ZuiJinViewController.h"
+#import "DownloadList.h"
+#import "DemoVideoPlayerViewController.h"
+
 
 @interface ZuiJinViewController ()
 
@@ -80,11 +83,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
-    
-    self.dataMArray = [[NSMutableArray alloc] initWithArray: @[ @{@"name": @"mov-1.jpg",  @"title": @"title" }, @{@"name": @"mov-2.jpg",  @"title": @"title" }, @{@"name": @"mov-3.jpg",  @"title": @"title" },
-                                                                @{@"name": @"mov-4.jpg",  @"title": @"title" },@{@"name": @"mov-5.jpg",  @"title": @"title" }]];
 
+
+    [self.dataMArray addObjectsFromArray: [DownloadList findAllSortedBy:@"update" ascending:NO]];
+    
+    
     
     
 }
@@ -142,18 +145,24 @@
         titleLabel.tag = 200;
         [cell.contentView addSubview:titleLabel];
         
+        
+        [[Button share] addToView:cell.contentView  addTarget:self rect:CGRectMake(440/2, 25, 120, 35) tag:2000 action:@selector(downloadOpen:)];
+
     }
     
     
-    
-    
+    UIButton *b = (UIButton *)[cell.contentView viewWithTag:2000];
     UILabel *titleLabel1 = (UILabel *)[cell.contentView viewWithTag:200];
+    
+    
+    
+    
+
+    [b setTitle:@"播放" forState:UIControlStateNormal];
 
     
-    NSDictionary *dict = [self.dataMArray objectAtIndex:indexPath.row];
-    
-    
-    titleLabel1.text = [dict objectForKey:@"title"];
+    DownloadList *download = [self.dataMArray objectAtIndex:indexPath.row];
+    titleLabel1.text = download.title;
 
     
     
@@ -182,6 +191,32 @@
     
 }
 
+
+
+- (void)downloadOpen:(UIButton *)button
+{
+    
+    
+    UITableViewCell *cell = (UITableViewCell *)[[[button superview] superview] superview] ;
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+
+    DownloadList *download = [self. dataMArray objectAtIndex:indexPath.row];
+    
+    
+    
+//        play
+    DemoVideoPlayerViewController *viewController = [[DemoVideoPlayerViewController alloc] init];
+    
+    viewController.downloadList = download;
+    
+    [self presentViewController:viewController animated:YES completion:^{
+        
+    }];
+
+    
+    
+    
+}
 
 #pragma mark - Table view delegate
 

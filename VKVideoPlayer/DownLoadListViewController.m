@@ -7,6 +7,8 @@
 //
 
 #import "DownLoadListViewController.h"
+#import "DownLoadList.h"
+#import "DemoVideoPlayerViewController.h"
 
 
 
@@ -83,13 +85,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     
-   
 
-    self.dataMArray = [[NSMutableArray alloc] initWithArray: @[ @{@"name": @"mov-1.jpg",  @"title": @"title" }, @{@"name": @"mov-2.jpg",  @"title": @"title" }, @{@"name": @"mov-3.jpg",  @"title": @"title" },
-                                                                @{@"name": @"mov-4.jpg",  @"title": @"title" },@{@"name": @"mov-5.jpg",  @"title": @"title" }]];
+//    NSPredicate *p = nil;
+//
+//    NSNumber *status = @0;
+//    if (status) {
+//        p = [NSPredicate predicateWithFormat:@"ANY status == %@", status];
+//    }
+//
+//    self.dataMArray = [[DownloadList findAllWithPredicate:p] mutableCopy];
 
+
+    NSPredicate* predicate1 = [NSPredicate predicateWithFormat: @" status = 1  or status = 2" ];
+    [self.dataMArray addObjectsFromArray: [DownloadList findAllWithPredicate:predicate1]];
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -102,6 +113,33 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)downloadOpen:(UIButton *)button
+{
+    
+    
+    
+    UITableViewCell *cell = (UITableViewCell *)[[[[button superview] superview] superview] superview];
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    
+    
+    DownloadList *download = [self. dataMArray objectAtIndex:indexPath.row];
+    
+    
+    if ([download.currentIndex intValue] == [download.files intValue]) {
+        
+        //        play
+        DemoVideoPlayerViewController *viewController = [[DemoVideoPlayerViewController alloc] init];
+        
+        viewController.downloadList = download;
+        
+        [self presentViewController:viewController animated:YES completion:^{
+            
+        }];
+        
+        
+    }
 }
 
 #pragma mark - Table view data source
@@ -143,42 +181,49 @@
         titleLabel.tag = 200;
         [cell.contentView addSubview:titleLabel];
         
-        
-        
+//        
+//        
         UILabel *sizeLabel = [[UILabel alloc] initWithFrame:CGRectMake(252/2, 25, 120, 35)];
 //        sizeLabel.textAlignment = NSTextAlignmentCenter;
         sizeLabel.textColor = [UIColor whiteColor];
         sizeLabel.tag = 201;
         [cell.contentView addSubview:sizeLabel];
-        
-        
-        
-        UILabel *tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(540/2, 25, 120, 35)];
-//        tipLabel.textAlignment = NSTextAlignmentCenter;
-        tipLabel.textColor = [UIColor whiteColor];
-        tipLabel.tag = 202;
-        [cell.contentView addSubview:tipLabel];
-
+//
+//        
+//        
+//        UILabel *tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(540/2, 25, 120, 35)];
+////        tipLabel.textAlignment = NSTextAlignmentCenter;
+//        tipLabel.textColor = [UIColor whiteColor];
+//        tipLabel.tag = 202;
+//        [cell.contentView addSubview:tipLabel];
+//
+        [[Button share] addToView:cell.contentView  addTarget:self rect:CGRectMake(440/2, 25, 120, 35) tag:2000 action:@selector(downloadOpen:)];
 
     }
     
     
+    DownloadList *download = self.dataMArray[indexPath.row];
     
     
     UILabel *titleLabel1 = (UILabel *)[cell.contentView viewWithTag:200];
     UILabel *titleLabel2 = (UILabel *)[cell.contentView viewWithTag:201];
-    UILabel *titleLabel3 = (UILabel *)[cell.contentView viewWithTag:202];
+//    UILabel *titleLabel3 = (UILabel *)[cell.contentView viewWithTag:202];
 
+    UIButton *b = (UIButton *)[cell.contentView viewWithTag:2000];
     
     
-    NSDictionary *dict = [self.dataMArray objectAtIndex:indexPath.row];
+
+    titleLabel1.text = download.title;
+
+    titleLabel2.text = [NSString stringWithFormat:@"%@/%@", download.currentIndex, download.files];
     
     
-    titleLabel1.text = [dict objectForKey:@"title"];
-    titleLabel2.text = [dict objectForKey:@"title"];
-    titleLabel3.text = [dict objectForKey:@"title"];
-    
-    
+    if ([download.currentIndex intValue] == [download.files intValue]) {
+        [b setTitle:@"播放" forState:UIControlStateNormal];
+    }
+    else {
+        [b setTitle:@"下载中" forState:UIControlStateNormal];
+    }
     
     return cell;
 }

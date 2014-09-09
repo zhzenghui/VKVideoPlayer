@@ -48,7 +48,9 @@
   [self addSubview:self.view];
   
   self.titleLabel.font = THEMEFONT(@"fontRegular", DEVICEVALUE(22.0f, 14.0f));
-  self.titleLabel.textColor = THEMECOLOR(@"colorFont4");
+    self.titleLabel.textColor = [UIColor whiteColor]; //THEMECOLOR(@"colorFont4");
+    self.titleLabel.frame = CGRectMake(0, 0, screen_Height, 25);
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
   self.titleLabel.text = @"";
 
   self.captionButton.titleLabel.font = THEMEFONT(@"fontRegular", 13.0f);
@@ -308,7 +310,7 @@
     }
   }
   
-  [self.titleLabel setFrameWidth:rightMargin - CGRectGetMinX(self.titleLabel.frame) - 20];
+//  [self.titleLabel setFrameWidth:rightMargin - CGRectGetMinX(self.titleLabel.frame) - 20];
 }
 
 - (void)setPlayButtonsSelected:(BOOL)selected {

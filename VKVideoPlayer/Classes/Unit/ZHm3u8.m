@@ -113,7 +113,8 @@
     
     [self reBuildM3uExtinfDurationArray:extinfDurationArray urlArray:urlArray];
     
-    [self loadNetWorkFilesForindex:0];
+    
+    [self loadNetWorkFilesForindex:[self.downloadList.currentIndex intValue]];
 
 }
 

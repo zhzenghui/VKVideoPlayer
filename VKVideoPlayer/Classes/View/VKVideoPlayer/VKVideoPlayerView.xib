@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="14A314h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none">
     <dependencies>
-        <deployment defaultVersion="1280" identifier="iOS"/>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <objects>
@@ -23,10 +23,8 @@
                 <outlet property="externalDeviceView" destination="104" id="108"/>
                 <outlet property="fullscreenButton" destination="5Qd-b3-byZ" id="F4o-y1-pUP"/>
                 <outlet property="messageLabel" destination="61" id="64"/>
-                <outlet property="nextButton" destination="37" id="38"/>
                 <outlet property="playButton" destination="17" id="25"/>
                 <outlet property="playerLayerView" destination="56" id="58"/>
-                <outlet property="rewindButton" destination="40" id="41"/>
                 <outlet property="scrubber" destination="18" id="26"/>
                 <outlet property="titleLabel" destination="89" id="90"/>
                 <outlet property="topControlOverlay" destination="32" id="33"/>
@@ -63,12 +61,10 @@
                         <bool key="isElement" value="YES"/>
                     </accessibility>
                 </view>
-                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="61" userLabel="Message Label">
+                <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="这个影片出了小问题，我们会很快修复它的。" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="61" userLabel="Message Label">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                    <string key="text">This is an advertisement.
-Your video will resume shortly.</string>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -133,53 +129,17 @@ Your video will resume shortly.</string>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="89" userLabel="Title Label">
-                                    <rect key="frame" x="76" y="0.0" width="95" height="44"/>
+                                    <rect key="frame" x="76" y="0.0" width="156" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="40" userLabel="Rewind Button">
-                                    <rect key="frame" x="251" y="0.0" width="32" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <state key="normal" image="VKVideoPlayer_rewind.png">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="disabled">
-                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="rewindButtonPressed:" destination="-1" eventType="touchUpInside" id="70"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="37" userLabel="Next Button">
-                                    <rect key="frame" x="288" y="0.0" width="32" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                    <state key="normal" image="VKVideoPlayer_next.png">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="disabled">
-                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="nextTrackButtonPressed:" destination="-1" eventType="touchUpInside" id="68"/>
-                                    </connections>
-                                </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="LWl-fl-KpR" userLabel="Close Button">
-                                    <rect key="frame" x="0.0" y="0.0" width="30" height="44"/>
+                                    <rect key="frame" x="0.0" y="20" width="46" height="33"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                    <state key="normal" image="VKVideoPlayer_cross.png">
+                                    <state key="normal" image="返回.png">
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
@@ -249,7 +209,7 @@ Your video will resume shortly.</string>
                                     <rect key="frame" x="242" y="0.0" width="40" height="44"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
-                                    <state key="normal" title="AUTO">
+                                    <state key="normal">
                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
@@ -323,13 +283,12 @@ Your video will resume shortly.</string>
     </objects>
     <resources>
         <image name="VKVideoPlayer_cross.png" width="17" height="17"/>
-        <image name="VKVideoPlayer_next.png" width="21" height="21"/>
         <image name="VKVideoPlayer_pause.png" width="17" height="17"/>
         <image name="VKVideoPlayer_pause_big.png" width="74" height="74"/>
         <image name="VKVideoPlayer_play.png" width="17" height="17"/>
         <image name="VKVideoPlayer_play_big.png" width="74" height="74"/>
-        <image name="VKVideoPlayer_rewind.png" width="27" height="21"/>
         <image name="VKVideoPlayer_zoom_in.png" width="16" height="16"/>
         <image name="VKVideoPlayer_zoom_out.png" width="16" height="16"/>
+        <image name="返回.png" width="29" height="15"/>
     </resources>
 </document>

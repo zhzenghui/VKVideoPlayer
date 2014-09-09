@@ -50,24 +50,39 @@
   
   [self addDemoControl];
     
-    
+
     
 }
+
+
+
+
 
 - (void)viewDidAppear:(BOOL)animated {
     
     
 
+    [super viewDidAppear:YES];
+
+   
+
+
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
     
     if ( [self.downloadList.status intValue] == 2 ) {
         
-
         [self playSampleClip2];
     }
     else {
         [self playSampleClip1];
     }
+    
 }
+
 
 - (BOOL)prefersStatusBarHidden {
   return NO;
@@ -80,19 +95,51 @@
 - (void)playSampleClip1 {
 
     NSURL *url = [NSURL URLWithString:self.downloadList.url];
+
     [self playStream:url];
 }
 - (void)playSampleClip2 {
 
     NSString *str = [NSString stringWithFormat:@"http://localhost:12345/%@/m3u8.m3u", self.downloadList.identity];
     [self playStream:[NSURL URLWithString: str ]];
+    
+
+}
+
+- (void)loadSeek
+{
+    int seekToTime = [self.downloadList.playTime intValue];
+    NSLog(@"loading  video success %i", seekToTime);
+    
+    
+    [self.player seekToTimeInSecond:seekToTime userAction:NO completionHandler:^(BOOL finished) {
+        
+        
+        if (finished) {
+            [self.player playContent];
+        }
+        
+    }];
+    
 }
 
 - (void)playStream:(NSURL*)url {
   VKVideoPlayerTrack *track = [[VKVideoPlayerTrack alloc] initWithStreamURL:url];
   track.hasNext = YES;
-  [self.player loadVideoWithTrack:track];
+
+    [track setTitle:self.downloadList.title];
+    [self.player loadVideoWithTrack:track ];
+
+    [self.player clearCaptions];
+
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(loadSeek) userInfo:nil repeats:NO];
+    
+    
 }
+
+
+
+
 
 - (VKVideoPlayerCaption*)testCaption:(NSString*)captionName {
   NSString *filePath = [[NSBundle mainBundle] pathForResource:captionName ofType:@"srt"];
@@ -105,28 +152,33 @@
 
 - (void)addDemoControl {
   
-  UIButton *playSample1Button = [UIButton buttonWithType:UIButtonTypeCustom];
-  playSample1Button.frame = CGRectMake(10,40,80,40);
-  [playSample1Button setTitle:@"remote" forState:UIControlStateNormal];
-  [playSample1Button addTarget:self action:@selector(playSampleClip1) forControlEvents:UIControlEventTouchUpInside];
-  [self.player.view addSubviewForControl:playSample1Button];
+//  UIButton *playSample1Button = [UIButton buttonWithType:UIButtonTypeCustom];
+//  playSample1Button.frame = CGRectMake(10,40,80,40);
+//  [playSample1Button setTitle:@"remote" forState:UIControlStateNormal];
+//  [playSample1Button addTarget:self action:@selector(playSampleClip1) forControlEvents:UIControlEventTouchUpInside];
+//  [self.player.view addSubviewForControl:playSample1Button];
+//
+//  UIButton *playSample2Button = [UIButton buttonWithType:UIButtonTypeCustom];
+//  playSample2Button.frame = CGRectMake(100,40,80,40);
+//  [playSample2Button setTitle:@"local" forState:UIControlStateNormal];
+//  [playSample2Button addTarget:self action:@selector(playSampleClip2) forControlEvents:UIControlEventTouchUpInside];
+//  [self.player.view addSubviewForControl:playSample2Button];
 
-  UIButton *playSample2Button = [UIButton buttonWithType:UIButtonTypeCustom];
-  playSample2Button.frame = CGRectMake(100,40,80,40);
-  [playSample2Button setTitle:@"local" forState:UIControlStateNormal];
-  [playSample2Button addTarget:self action:@selector(playSampleClip2) forControlEvents:UIControlEventTouchUpInside];
-  [self.player.view addSubviewForControl:playSample2Button];
+//    UILabel *lable= [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 320, 25)];
+//    lable.text = self.downloadList.title;
+//    lable.textAlignment = NSTextAlignmentCenter;
+//    [self.player.view addSubviewForControl:lable];
     
 
     
     
     UIButton *xiazaiButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    xiazaiButton.frame = CGRectMake(150,40,80,40);
+    xiazaiButton.frame = CGRectMake(screen_Height - 80,20,80,40);
     [xiazaiButton setTitle:@"下载" forState:UIControlStateNormal];
     [xiazaiButton addTarget:self action:@selector(downloadVideo) forControlEvents:UIControlEventTouchUpInside];
     [self.player.view addSubviewForControl:xiazaiButton];
 
-    
+
 }
 
 #pragma mark - VKVideoPlayerControllerDelegate
@@ -135,6 +187,11 @@
   __weak __typeof(self) weakSelf = self;
 
   if (event == VKVideoPlayerControlEventTapDone) {
+      NSLog(@"%f", self.player.currentTime );
+      self.downloadList.playTime = [NSNumber numberWithDouble: self.player.currentTime];
+      
+      [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+      }];
     [self dismissViewControllerAnimated:YES completion:nil];
   }
   
@@ -177,6 +234,12 @@
     [self.player setCaptionToBottom:caption];
     [self.player.view.captionButton setTitle:[code uppercaseString] forState:UIControlStateNormal];
   }
+}
+
+
+
+- (NSUInteger)supportedInterfaceOrientations {
+	return UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
 }
 
 

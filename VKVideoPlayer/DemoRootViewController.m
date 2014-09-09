@@ -328,7 +328,8 @@ typedef enum {
         dlist.update = [NSDate date];
         
 
-    }    
+    }
+    
     [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
         
         if (success) {
@@ -359,7 +360,7 @@ typedef enum {
     UITableViewCell *cell = (UITableViewCell *)[[[[button superview] superview] superview] superview];
     
     
-    UIImageView *imageView = (UIImageView *)[cell viewWithTag:100];
+    UIImageView *imageView = (UIImageView *)[cell viewWithTag:101];
     
     
     

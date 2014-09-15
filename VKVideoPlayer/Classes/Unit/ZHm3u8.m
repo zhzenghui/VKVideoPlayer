@@ -193,14 +193,6 @@
     urlString = [urlString stringByReplacingOccurrencesOfString:@"\r" withString:@""];
     
 
-    
-    
-    
-    
-    index ++;
-
-
-    
     dispatch_queue_t queue = dispatch_queue_create("com.ple.queue", NULL);
     dispatch_async(queue, ^(void) {
         
@@ -216,7 +208,7 @@
         
         
         
-        
+
         
         if ( data ) {
             DLog(@"currentIndex  : %i", index);
@@ -244,6 +236,7 @@
         
     });
 
+    index ++;
 
 }
 

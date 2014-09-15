@@ -54,6 +54,7 @@
 		1BB9D35918FBFEF300568286 /* testCaptionTop.srt in Resources */ = {isa = PBXBuildFile; fileRef = 1BB9D35818FBFEF300568286 /* testCaptionTop.srt */; };
 		1BB9D35A18FBFEF400568286 /* testCaptionTop.srt in Resources */ = {isa = PBXBuildFile; fileRef = 1BB9D35818FBFEF300568286 /* testCaptionTop.srt */; };
 		1BF1CCDB1903A8660006FBC8 /* DemoRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BF1CCDA1903A8660006FBC8 /* DemoRootViewController.m */; };
+		C00BC1F019C69E9D005713F3 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = C00BC1EF19C69E9D005713F3 /* Message.m */; };
 		C035B77819B6FFE9006177B9 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C035B77719B6FFE9006177B9 /* SettingViewController.m */; };
 		C08DE69D19B846930093244E /* MagicalImportFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE63F19B846930093244E /* MagicalImportFunctions.m */; };
 		C08DE69E19B846930093244E /* NSAttributeDescription+MagicalDataImport.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE64119B846930093244E /* NSAttributeDescription+MagicalDataImport.m */; };
@@ -208,6 +209,8 @@
 		1BF1CCD91903A8660006FBC8 /* DemoRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoRootViewController.h; sourceTree = "<group>"; };
 		1BF1CCDA1903A8660006FBC8 /* DemoRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoRootViewController.m; sourceTree = "<group>"; };
 		348E1BD9B136464CB42DDFDD /* Pods-VKVideoPlayerTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKVideoPlayerTests.xcconfig"; path = "Pods/Pods-VKVideoPlayerTests.xcconfig"; sourceTree = "<group>"; };
+		C00BC1EE19C69E9D005713F3 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		C00BC1EF19C69E9D005713F3 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
 		C035B77619B6FFE9006177B9 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		C035B77719B6FFE9006177B9 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		C08DE63719B846930093244E /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
@@ -715,6 +718,8 @@
 			children = (
 				C08DE6DF19B860A70093244E /* AllBaseViewController.h */,
 				C08DE6E019B860A70093244E /* AllBaseViewController.m */,
+				C00BC1EE19C69E9D005713F3 /* Message.h */,
+				C00BC1EF19C69E9D005713F3 /* Message.m */,
 				C08DE68119B846930093244E /* Button.h */,
 				C08DE68219B846930093244E /* Button.m */,
 				C08DE68319B846930093244E /* VKVideoPlayer */,
@@ -1003,6 +1008,7 @@
 				C08DE6CC19B849080093244E /* Model.xcdatamodeld in Sources */,
 				C08DE6B519B846930093244E /* MagicalRecord+ShorthandSupport.m in Sources */,
 				C08DE6B419B846930093244E /* MagicalRecord+Setup.m in Sources */,
+				C00BC1F019C69E9D005713F3 /* Message.m in Sources */,
 				C08DE6BD19B846930093244E /* VKVideoPlayer.m in Sources */,
 				C08DE6DE19B85F3B0093244E /* AboutViewController.m in Sources */,
 				1B53AC3D1916732200E1B484 /* DemoHTTPStreamingServer.m in Sources */,
@@ -1172,6 +1178,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"${SRCROOT}/Classes/\"";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1193,6 +1200,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "2F6DB9F6-0B65-4C74-8351-A46E20ED2454";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "\"${SRCROOT}/Classes/\"";
 				WRAPPER_EXTENSION = app;
 			};

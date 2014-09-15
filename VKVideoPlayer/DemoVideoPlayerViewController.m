@@ -22,6 +22,10 @@
     
 
     if (self.downloadList.status != 0) {
+        NSString *str = [NSString stringWithFormat:@"%@ 已经在下载了", self.downloadList.title];
+        
+        [[Message share] messageAlert:str];
+//        [[Message share] messageAlert:str delegate:self];
 //      提醒 已经下载
         
 //        return;
@@ -76,9 +80,12 @@
     if ( [self.downloadList.status intValue] == 2 ) {
         
         [self playSampleClip2];
+        souceType = SouceTypeLocal;
+        
     }
     else {
         [self playSampleClip1];
+        souceType = SouceTypeRemote;
     }
     
 }

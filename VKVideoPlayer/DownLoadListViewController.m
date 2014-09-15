@@ -120,7 +120,7 @@
     
     
     
-    UITableViewCell *cell = (UITableViewCell *)[[[[button superview] superview] superview] superview];
+    UITableViewCell *cell = (UITableViewCell *)[[[button superview] superview] superview];
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     
     

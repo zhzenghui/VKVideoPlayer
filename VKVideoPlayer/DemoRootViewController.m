@@ -270,6 +270,9 @@ typedef enum {
     
     UITableViewCell *cell = (UITableViewCell *)[[[[button superview] superview] superview] superview];
     
+    if (iOS8) {
+        cell = (UITableViewCell *)[[[button superview] superview] superview];
+    }
     
     UIView *view = [cell viewWithTag:102];
     view.alpha = 0;
@@ -292,6 +295,10 @@ typedef enum {
     //    NSDictionary *dict = @{@"name": @"Chuang-King" ,@"url": @"http://screencasts.b0.upaiyun.com/assets/episodes/video/006-tags.mp4"};
     
     UITableViewCell *cell = (UITableViewCell *)[[[[button superview] superview] superview] superview];
+    
+    if (iOS8) {
+        cell = (UITableViewCell *)[[[button superview] superview] superview];
+    }
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     NSDictionary *dict = [self. dataMArray objectAtIndex:indexPath.row];
     
@@ -317,8 +324,11 @@ typedef enum {
         dlist.title =  dict[@"title"];
         dlist.identity = [NSNumber numberWithInt:[ dict[@"id"] intValue]];
         dlist.status = @0;
+//        NSString *url = [dict[@"url"]  stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//        url = [url stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
         dlist.url = dict[@"url"];
-        
+
+
         dlist.currentIndex = @0;
         dlist.files = @0;
         dlist.viewCount = @1;
@@ -757,7 +767,7 @@ typedef enum {
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
     return (toInterfaceOrientation == UIInterfaceOrientationMaskPortrait);
 }
-#pragma mark - UITableViewDelegate
+//#pragma mark - UITableViewDelegate
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 //  UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 //  Class vcClass = NSClassFromString(cell.textLabel.text);

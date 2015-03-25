@@ -10,6 +10,9 @@
 #import <DDTTYLogger.h>
 #import "VKThemeManager.h"
 #import "DemoHTTPStreamingServer.h"
+#import "ZHm3u8.h"
+
+
 
 @implementation VKAppDelegate
 
@@ -86,6 +89,12 @@
   // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 
   [[DemoHTTPStreamingServer sharedInstance] stop];
+    
+    
+    ZHm3u8 *m3u = [ZHm3u8 share];
+    if ( ! m3u.isStop) {
+        [m3u stopLoad];
+    }
 }
 
 @end

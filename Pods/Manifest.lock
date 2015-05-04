@@ -20,7 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.3.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - CocoaAsyncSocket (7.3.5)
+  - CocoaAsyncSocket (7.4.1)
   - CocoaHTTPServer (2.3):
     - CocoaAsyncSocket
     - CocoaLumberjack
@@ -35,23 +35,38 @@ PODS:
     - DTFoundation/DTAnimatedGIF (~> 1.7.1)
     - DTFoundation/DTHTMLParser (~> 1.7.1)
     - DTFoundation/UIKit (~> 1.7.1)
-  - DTFoundation/Core (1.7.2)
-  - DTFoundation/DTAnimatedGIF (1.7.2)
-  - DTFoundation/DTHTMLParser (1.7.2):
+  - DTFoundation/Core (1.7.5)
+  - DTFoundation/DTAnimatedGIF (1.7.5)
+  - DTFoundation/DTHTMLParser (1.7.5):
     - DTFoundation/Core
-  - DTFoundation/UIKit (1.7.2):
+  - DTFoundation/UIKit (1.7.5):
     - DTFoundation/Core
-  - Expecta (0.3.1)
-  - FXImageView (1.3.3)
+  - FXImageView (1.3.5)
   - JSONKit (1.5pre)
-  - OCMock (2.2.4)
+  - JXHTTP (2.0.1)
   - Reachability (3.1.1)
   - SDWebImage (3.7.1):
     - SDWebImage/Core
   - SDWebImage/Core (3.7.1)
-  - Specta (0.2.1)
+  - Spectacles (1.0.1)
   - SVProgressHUD (1.0)
   - SVPullToRefresh (0.4.1)
+  - TMTumblrSDK (2.1.2):
+    - TMTumblrSDK/Activity
+    - TMTumblrSDK/APIClient
+    - TMTumblrSDK/AppClient
+    - TMTumblrSDK/Core
+  - TMTumblrSDK/Activity (2.1.2)
+  - TMTumblrSDK/APIClient (2.1.2):
+    - JXHTTP (~> 2.0.1)
+    - TMTumblrSDK/APIClient/Authentication
+  - TMTumblrSDK/APIClient/Authentication (2.1.2):
+    - JXHTTP (~> 2.0.1)
+    - TMTumblrSDK/Core
+  - TMTumblrSDK/AppClient (2.1.2):
+    - TMTumblrSDK/Core
+  - TMTumblrSDK/Core (2.1.2):
+    - Spectacles (~> 1.0)
   - VKFoundation (0.1.1):
     - CocoaLumberjack (~> 1.7.0)
     - DTCoreText (~> 1.6.11)
@@ -63,14 +78,12 @@ DEPENDENCIES:
   - CocoaHTTPServer
   - CocoaLumberjack (~> 1.7.0)
   - DTCoreText (~> 1.6.11)
-  - Expecta (~> 0.3.0)
   - JSONKit (~> 1.4)
-  - OCMock (~> 2.2.1)
   - Reachability
   - SDWebImage
-  - Specta (~> 0.2.1)
   - SVProgressHUD
   - SVPullToRefresh
+  - TMTumblrSDK
   - VKFoundation (from `https://github.com/viki-org/VKFoundation.git`)
 
 EXTERNAL SOURCES:
@@ -78,21 +91,21 @@ EXTERNAL SOURCES:
     :git: https://github.com/viki-org/VKFoundation.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
-  CocoaAsyncSocket: 45bdbbc1c0a5ed0640ff4c42af325ba43a2f099a
-  CocoaHTTPServer: 217df4cba4e48803db2480f97b805aaad2230dd1
-  CocoaLumberjack: 744856111d9431252611e696ea460ffe36fdc5ae
-  DTCoreText: 84eb8ba2e70448fdd9d837540e371f9f587b65ba
-  DTFoundation: 126729614911ae7dbab3dcc1c078f189943bee66
-  Expecta: 03aabd0a89d8dea843baecb19a7fd7466a69a31d
-  FXImageView: 0f3496c1be409a450a424f2c06b448fd27cbb9cc
-  JSONKit: efef3bbd3372ff33f96b9c6f34cf4fe18e74ab69
-  OCMock: 6db79185520e24f9f299548f2b8b07e41d881bd5
-  Reachability: 8e9635e3cb4f98e7f825e51147f677ecc694d0e7
-  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
-  Specta: 9141310f46b1f68b676650ff2854e1ed0b74163a
-  SVProgressHUD: 5034c6e22b8c2ca3e09402e48d41ed0340aa1c50
-  SVPullToRefresh: d5161ebc833a38b465364412e5e307ca80bbb190
+  AFNetworking: 05b9f6e3aa5ac45bc383b4bb108ef338080a26c7
+  CocoaAsyncSocket: 7cbf214b27f8e7f7574db6a3fd96352ffaed433d
+  CocoaHTTPServer: 5624681fc3473d43b18202f635f9b3abb013b530
+  CocoaLumberjack: a2213b8410917a1a5ecfc5c63a4206edc24d3a5b
+  DTCoreText: d90a4dca8e4f7b0eb18f12a967563b77a75694f0
+  DTFoundation: 1d28080c20c3da041706545363f8238ab53a6204
+  FXImageView: 7d84722b37f0afea9a64f12fdd4a6c7f9ecc4b16
+  JSONKit: bae313ce6a6c444f40489a6c0b023f399888871f
+  JXHTTP: 0e1ea9e7f97f3de9200b684a456475f17c58e431
+  Reachability: dd9aa4fb6667b9f787690a74f53cb7634ce99893
+  SDWebImage: ed3095af2ff88b436426037444979b917f6c5575
+  Spectacles: 8dc60711140320653724560e2d6bbb8a8f0940e4
+  SVProgressHUD: 46088807596a795cbcb4affd92cf3f13b6ab3dda
+  SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
+  TMTumblrSDK: f508e29738bcfba8908eb3cb2cb35212533050f6
   VKFoundation: c1abb334f7c2bc0ad1f87753bbf0b75513338170
 
 COCOAPODS: 0.33.1

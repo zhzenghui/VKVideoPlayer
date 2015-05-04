@@ -201,4 +201,15 @@ RectMakeC2x(CGFloat x, CGFloat y, CGFloat width, CGFloat height)
 }
 
 
+//// Authenticate via OAuth
+//[TMAPIClient sharedInstance].OAuthConsumerKey = @"M077K8M34cgCnWRlHMKZXD4jRgUacWxKm2zIqRDDWjYonVkZc0";
+//[TMAPIClient sharedInstance].OAuthConsumerSecret = @"bOHPsFGZKPgjCy1e6IKaZ2X21s0rgSAGuSvlxE7tAGRyq4ExXB";
+//[TMAPIClient sharedInstance].OAuthToken = @"bkThvzwwsWTJKMz228JhmY6OBSkOy9eMggMP9dZrkSAW3UpqIO";
+//[TMAPIClient sharedInstance].OAuthTokenSecret = @"wNJoO3vUflU3BYm6rg0JWOs0wS7bX9MCESkQRoAWMjIrEqxe7N";
+//
+//// Make the request
+//[[TMAPIClient sharedInstance] userInfo:^ (id result, NSError *error) {
+//    // ...
+//}];
+
 

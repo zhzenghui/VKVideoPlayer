@@ -9,10 +9,10 @@
 #import <Foundation/Foundation.h>
 #endif
 
-#import "Specta.h"
+//#import "Specta.h"
 #import "VKVideoPlayer.h"
 #define EXP_SHORTHAND
-#import "Expecta.h"
+//#import "Expecta.h"
 #import "DemoHTTPStreamingServer.h"
-#import "OCMock.h"
+//#import "OCMock.h"
 

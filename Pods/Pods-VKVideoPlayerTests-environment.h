@@ -51,8 +51,8 @@
 // CocoaAsyncSocket
 #define COCOAPODS_POD_AVAILABLE_CocoaAsyncSocket
 #define COCOAPODS_VERSION_MAJOR_CocoaAsyncSocket 7
-#define COCOAPODS_VERSION_MINOR_CocoaAsyncSocket 3
-#define COCOAPODS_VERSION_PATCH_CocoaAsyncSocket 5
+#define COCOAPODS_VERSION_MINOR_CocoaAsyncSocket 4
+#define COCOAPODS_VERSION_PATCH_CocoaAsyncSocket 1
 
 // CocoaHTTPServer
 #define COCOAPODS_POD_AVAILABLE_CocoaHTTPServer
@@ -88,25 +88,25 @@
 #define COCOAPODS_POD_AVAILABLE_DTFoundation_Core
 #define COCOAPODS_VERSION_MAJOR_DTFoundation_Core 1
 #define COCOAPODS_VERSION_MINOR_DTFoundation_Core 7
-#define COCOAPODS_VERSION_PATCH_DTFoundation_Core 2
+#define COCOAPODS_VERSION_PATCH_DTFoundation_Core 5
 
 // DTFoundation/DTAnimatedGIF
 #define COCOAPODS_POD_AVAILABLE_DTFoundation_DTAnimatedGIF
 #define COCOAPODS_VERSION_MAJOR_DTFoundation_DTAnimatedGIF 1
 #define COCOAPODS_VERSION_MINOR_DTFoundation_DTAnimatedGIF 7
-#define COCOAPODS_VERSION_PATCH_DTFoundation_DTAnimatedGIF 2
+#define COCOAPODS_VERSION_PATCH_DTFoundation_DTAnimatedGIF 5
 
 // DTFoundation/DTHTMLParser
 #define COCOAPODS_POD_AVAILABLE_DTFoundation_DTHTMLParser
 #define COCOAPODS_VERSION_MAJOR_DTFoundation_DTHTMLParser 1
 #define COCOAPODS_VERSION_MINOR_DTFoundation_DTHTMLParser 7
-#define COCOAPODS_VERSION_PATCH_DTFoundation_DTHTMLParser 2
+#define COCOAPODS_VERSION_PATCH_DTFoundation_DTHTMLParser 5
 
 // DTFoundation/UIKit
 #define COCOAPODS_POD_AVAILABLE_DTFoundation_UIKit
 #define COCOAPODS_VERSION_MAJOR_DTFoundation_UIKit 1
 #define COCOAPODS_VERSION_MINOR_DTFoundation_UIKit 7
-#define COCOAPODS_VERSION_PATCH_DTFoundation_UIKit 2
+#define COCOAPODS_VERSION_PATCH_DTFoundation_UIKit 5
 
 // Expecta
 #define COCOAPODS_POD_AVAILABLE_Expecta
@@ -118,7 +118,7 @@
 #define COCOAPODS_POD_AVAILABLE_FXImageView
 #define COCOAPODS_VERSION_MAJOR_FXImageView 1
 #define COCOAPODS_VERSION_MINOR_FXImageView 3
-#define COCOAPODS_VERSION_PATCH_FXImageView 3
+#define COCOAPODS_VERSION_PATCH_FXImageView 5
 
 // JSONKit
 #define COCOAPODS_POD_AVAILABLE_JSONKit
@@ -126,6 +126,12 @@
 // so we were not able to define version macros.
 // Please contact the author.
 // Version: 1.5pre.
+
+// JXHTTP
+#define COCOAPODS_POD_AVAILABLE_JXHTTP
+#define COCOAPODS_VERSION_MAJOR_JXHTTP 2
+#define COCOAPODS_VERSION_MINOR_JXHTTP 0
+#define COCOAPODS_VERSION_PATCH_JXHTTP 1
 
 // OCMock
 #define COCOAPODS_POD_AVAILABLE_OCMock
@@ -168,6 +174,48 @@
 #define COCOAPODS_VERSION_MAJOR_Specta 0
 #define COCOAPODS_VERSION_MINOR_Specta 2
 #define COCOAPODS_VERSION_PATCH_Specta 1
+
+// Spectacles
+#define COCOAPODS_POD_AVAILABLE_Spectacles
+#define COCOAPODS_VERSION_MAJOR_Spectacles 1
+#define COCOAPODS_VERSION_MINOR_Spectacles 0
+#define COCOAPODS_VERSION_PATCH_Spectacles 1
+
+// TMTumblrSDK
+#define COCOAPODS_POD_AVAILABLE_TMTumblrSDK
+#define COCOAPODS_VERSION_MAJOR_TMTumblrSDK 2
+#define COCOAPODS_VERSION_MINOR_TMTumblrSDK 1
+#define COCOAPODS_VERSION_PATCH_TMTumblrSDK 2
+
+// TMTumblrSDK/APIClient
+#define COCOAPODS_POD_AVAILABLE_TMTumblrSDK_APIClient
+#define COCOAPODS_VERSION_MAJOR_TMTumblrSDK_APIClient 2
+#define COCOAPODS_VERSION_MINOR_TMTumblrSDK_APIClient 1
+#define COCOAPODS_VERSION_PATCH_TMTumblrSDK_APIClient 2
+
+// TMTumblrSDK/APIClient/Authentication
+#define COCOAPODS_POD_AVAILABLE_TMTumblrSDK_APIClient_Authentication
+#define COCOAPODS_VERSION_MAJOR_TMTumblrSDK_APIClient_Authentication 2
+#define COCOAPODS_VERSION_MINOR_TMTumblrSDK_APIClient_Authentication 1
+#define COCOAPODS_VERSION_PATCH_TMTumblrSDK_APIClient_Authentication 2
+
+// TMTumblrSDK/Activity
+#define COCOAPODS_POD_AVAILABLE_TMTumblrSDK_Activity
+#define COCOAPODS_VERSION_MAJOR_TMTumblrSDK_Activity 2
+#define COCOAPODS_VERSION_MINOR_TMTumblrSDK_Activity 1
+#define COCOAPODS_VERSION_PATCH_TMTumblrSDK_Activity 2
+
+// TMTumblrSDK/AppClient
+#define COCOAPODS_POD_AVAILABLE_TMTumblrSDK_AppClient
+#define COCOAPODS_VERSION_MAJOR_TMTumblrSDK_AppClient 2
+#define COCOAPODS_VERSION_MINOR_TMTumblrSDK_AppClient 1
+#define COCOAPODS_VERSION_PATCH_TMTumblrSDK_AppClient 2
+
+// TMTumblrSDK/Core
+#define COCOAPODS_POD_AVAILABLE_TMTumblrSDK_Core
+#define COCOAPODS_VERSION_MAJOR_TMTumblrSDK_Core 2
+#define COCOAPODS_VERSION_MINOR_TMTumblrSDK_Core 1
+#define COCOAPODS_VERSION_PATCH_TMTumblrSDK_Core 2
 
 // VKFoundation
 #define COCOAPODS_POD_AVAILABLE_VKFoundation

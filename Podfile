@@ -5,12 +5,7 @@ pod 'CocoaLumberjack', '~> 1.7.0'
 pod 'VKFoundation', :git => "https://github.com/viki-org/VKFoundation.git"
 pod 'CocoaHTTPServer'
 
-target 'VKVideoPlayerTests' do
-  pod 'Specta',      '~> 0.2.1'
-  pod 'Expecta',     '~> 0.3.0'
-  pod 'OCMock',      '~> 2.2.1'
-  pod 'CocoaHTTPServer'
-end
+
 
 # Remove 64-bit build architecture from Pods targets
 post_install do |installer|
@@ -26,3 +21,4 @@ pod 'SDWebImage'
 pod 'SVProgressHUD'
 pod 'SVPullToRefresh'
 pod 'Reachability'
+pod 'TMTumblrSDK'

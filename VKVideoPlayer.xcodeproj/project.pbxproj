@@ -48,7 +48,6 @@
 		1BB6ADD518EE626A00767FA3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB6ADBA18EE626A00767FA3 /* Foundation.framework */; };
 		1BB6ADD618EE626A00767FA3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BB6ADBE18EE626A00767FA3 /* UIKit.framework */; };
 		1BB6ADDE18EE626A00767FA3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1BB6ADDC18EE626A00767FA3 /* InfoPlist.strings */; };
-		1BB6ADE018EE626A00767FA3 /* VKVideoPlayerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB6ADDF18EE626A00767FA3 /* VKVideoPlayerSpec.m */; };
 		1BB9D35618FBE16800568286 /* testCaptionBottom.srt in Resources */ = {isa = PBXBuildFile; fileRef = 1BB9D35518FBE16800568286 /* testCaptionBottom.srt */; };
 		1BB9D35718FBE64E00568286 /* testCaptionBottom.srt in Resources */ = {isa = PBXBuildFile; fileRef = 1BB9D35518FBE16800568286 /* testCaptionBottom.srt */; };
 		1BB9D35918FBFEF300568286 /* testCaptionTop.srt in Resources */ = {isa = PBXBuildFile; fileRef = 1BB9D35818FBFEF300568286 /* testCaptionTop.srt */; };
@@ -203,7 +202,6 @@
 		1BB6ADD318EE626A00767FA3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		1BB6ADDB18EE626A00767FA3 /* VKVideoPlayerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VKVideoPlayerTests-Info.plist"; sourceTree = "<group>"; };
 		1BB6ADDD18EE626A00767FA3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1BB6ADDF18EE626A00767FA3 /* VKVideoPlayerSpec.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VKVideoPlayerSpec.m; sourceTree = "<group>"; };
 		1BB9D35518FBE16800568286 /* testCaptionBottom.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = testCaptionBottom.srt; sourceTree = "<group>"; };
 		1BB9D35818FBFEF300568286 /* testCaptionTop.srt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 2; path = testCaptionTop.srt; sourceTree = "<group>"; };
 		1BF1CCD91903A8660006FBC8 /* DemoRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoRootViewController.h; sourceTree = "<group>"; };
@@ -475,7 +473,6 @@
 			isa = PBXGroup;
 			children = (
 				1B4DA0E918F67B270009ECDF /* Assets */,
-				1BB6ADDF18EE626A00767FA3 /* VKVideoPlayerSpec.m */,
 				1BB6ADDA18EE626A00767FA3 /* Supporting Files */,
 			);
 			path = VKVideoPlayerTests;
@@ -1055,7 +1052,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B53AC3E1916732200E1B484 /* DemoHTTPStreamingServer.m in Sources */,
-				1BB6ADE018EE626A00767FA3 /* VKVideoPlayerSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

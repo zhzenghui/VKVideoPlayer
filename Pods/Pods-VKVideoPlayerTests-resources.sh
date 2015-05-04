@@ -42,6 +42,12 @@ install_resource()
   esac
 }
 install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
+install_resource "TMTumblrSDK/TMTumblrSDK/Activity/UIActivityTumblr.png"
+install_resource "TMTumblrSDK/TMTumblrSDK/Activity/UIActivityTumblr@2x.png"
+install_resource "TMTumblrSDK/TMTumblrSDK/Activity/UIActivityTumblr@2x~ipad.png"
+install_resource "TMTumblrSDK/TMTumblrSDK/Activity/UIActivityTumblr~ipad.png"
+install_resource "TMTumblrSDK/TMTumblrSDK/Activity/UIActivityTumblr~ipad@2x.png"
+install_resource "TMTumblrSDK/TMTumblrSDK.podspec.json"
 install_resource "VKFoundation/Assets/VKFoundation_themes.plist"
 install_resource "VKFoundation/Assets/VKPickerButton_bg.png"
 install_resource "VKFoundation/Assets/VKPickerButton_bg@2x.png"

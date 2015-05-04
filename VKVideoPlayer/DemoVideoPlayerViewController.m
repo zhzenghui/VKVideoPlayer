@@ -108,6 +108,7 @@
 - (void)playSampleClip2 {
 
     NSString *str = [NSString stringWithFormat:@"http://localhost:12345/%@/m3u8.m3u", self.downloadList.identity];
+    str = @"http://192.168.199.104:1314/leaked%20photos%20on%202014-09-01%20from%20iCloud/Jessica%20Brown%20Findlay/irb1NDIA_tyo.mov";
     [self playStream:[NSURL URLWithString: str ]];
     
 

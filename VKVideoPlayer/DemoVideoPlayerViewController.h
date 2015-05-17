@@ -14,9 +14,11 @@ typedef NS_ENUM(NSInteger, SouceType) {
 
 #import <UIKit/UIKit.h>
 #import "VKVideoPlayer.h"
+#import "DownloadList.h"
+#import "AllBaseViewController.h"
 
-@class DownloadList;
-@interface DemoVideoPlayerViewController : UIViewController<
+
+@interface DemoVideoPlayerViewController : AllBaseViewController<UIAlertViewDelegate,
   VKVideoPlayerDelegate, UIWebViewDelegate
 >
 {
@@ -31,6 +33,6 @@ typedef NS_ENUM(NSInteger, SouceType) {
 
 @property (nonatomic, strong) DownloadList *downloadList;
 
-
+@property (nonatomic, assign) BOOL isPlayLocal;
 
 @end

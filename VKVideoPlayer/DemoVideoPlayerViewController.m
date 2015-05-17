@@ -8,7 +8,7 @@
 #import "VKVideoPlayerCaptionSRT.h"
 #import "ZHm3u8.h"
 #import "DownLoadList.h"
-
+#import "DownLoadListViewController.h"
 
 @interface DemoVideoPlayerViewController ()
 @property (nonatomic, strong) NSString *currentLanguageCode;
@@ -16,30 +16,53 @@
 
 @implementation DemoVideoPlayerViewController
 
-- (void)downloadVideo
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    if (buttonIndex == 1) {
+        [[ZHm3u8 share] startLoad];
+    }
+}
+
+- (void)downloadVideo:(UIButton *)button
 {
     
     
 
-    if (self.downloadList.status != 0) {
-        NSString *str = [NSString stringWithFormat:@"%@ 已经在下载了", self.downloadList.title];
+    if ([self.downloadList.status intValue] == 0 || [self.downloadList.status intValue] == 4) {
+        NSString *str = [NSString stringWithFormat:@"%@ 已经加入了下载列表，是否现在开始下载？", self.downloadList.title];
+        [[Message share] messageAlert:str delegate:self];
+    
+        self.downloadList.status = @3;
         
-        [[Message share] messageAlert:str];
-//        [[Message share] messageAlert:str delegate:self];
-//      提醒 已经下载
+        [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+        }];
         
-//        return;
+        [ZHm3u8 share].downloadList = self.downloadList;
+        button.titleLabel.text = @"下载";
+        
+        
     }
+    else {
 
 
-    ZHm3u8 *m3u = [[ZHm3u8 alloc] init];
-    m3u.downloadList = self.downloadList;
+        [[Message share] messageAlert:@"已经在下载列表里面了"];
+    }
+//    else {
+//        
+//        DownLoadListViewController *   baseView = [[DownLoadListViewController alloc] init];
+//
+//
+//        [self addChildViewController:baseView];
+//        [self.view addSubview:baseView.view];
+//        baseView.view.alpha = 0;
+//
+//        [UIView animateWithDuration:KLongDuration animations:^{
+//            baseView.view.alpha = 1;
+//        }];
+//
+//    }
 
-    [m3u loadM3u8File];
-    
-    
-    
-    
 }
 
 - (void)viewDidLoad {
@@ -52,7 +75,6 @@
   self.player.view.frame = self.view.bounds;
   [self.view addSubview:self.player.view];
   
-  [self addDemoControl];
     
 
     
@@ -68,7 +90,8 @@
 
     [super viewDidAppear:YES];
 
-   
+    [self addDemoControl];
+
 
 
 }
@@ -77,7 +100,7 @@
 {
     [super viewWillAppear:YES];
     
-    if ( [self.downloadList.status intValue] == 2 ) {
+    if ( self.isPlayLocal) {
         
         [self playSampleClip2];
         souceType = SouceTypeLocal;
@@ -118,8 +141,8 @@
 {
     int seekToTime = [self.downloadList.playTime intValue];
     NSLog(@"loading  video success %i", seekToTime);
-    
-    
+    [self.player pauseContent];
+
     [self.player seekToTimeInSecond:seekToTime userAction:NO completionHandler:^(BOOL finished) {
         
         
@@ -141,6 +164,7 @@
     [self.player clearCaptions];
 
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(loadSeek) userInfo:nil repeats:NO];
+
     
     
 }
@@ -181,9 +205,16 @@
     
     
     UIButton *xiazaiButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    xiazaiButton.frame = CGRectMake(screen_Height - 80,20,80,40);
-    [xiazaiButton setTitle:@"下载" forState:UIControlStateNormal];
-    [xiazaiButton addTarget:self action:@selector(downloadVideo) forControlEvents:UIControlEventTouchUpInside];
+    xiazaiButton.frame = CGRectMake(screen_Height - 100,20,100,40);
+    
+    if ([self.downloadList.status intValue] != 0 ) {
+        [xiazaiButton setTitle:@"下载" forState:UIControlStateNormal];
+    }
+    else {
+        [xiazaiButton setTitle:@"下载" forState:UIControlStateNormal];
+    }
+
+    [xiazaiButton addTarget:self action:@selector(downloadVideo:) forControlEvents:UIControlEventTouchUpInside];
     [self.player.view addSubviewForControl:xiazaiButton];
 
 
@@ -198,8 +229,13 @@
       NSLog(@"%f", self.player.currentTime );
       self.downloadList.playTime = [NSNumber numberWithDouble: self.player.currentTime];
       
+
+      
       [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
       }];
+      
+      
+
     [self dismissViewControllerAnimated:YES completion:nil];
   }
   

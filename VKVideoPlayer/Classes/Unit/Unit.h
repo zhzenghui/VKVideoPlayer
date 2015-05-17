@@ -47,7 +47,9 @@ typedef enum {
 
 
 
-#define iOS7 ([[[UIDevice currentDevice]systemVersion] floatValue] >= 7.0)?YES:NO
+#define iOS7 ([[[UIDevice currentDevice]systemVersion] floatValue] >= 7.0 && [[[UIDevice currentDevice]systemVersion] floatValue] <= 8.0)?YES:NO
+#define iOS8 ([[[UIDevice currentDevice]systemVersion] floatValue] >= 8.0 && [[[UIDevice currentDevice]systemVersion] floatValue] <= 9.0)?YES:NO
+
 #define is40 (screen_Height == 568)
 
 #define Statue_success @"100"

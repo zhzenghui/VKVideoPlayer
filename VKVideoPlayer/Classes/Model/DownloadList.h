@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSNumber * identity;
 @property (nonatomic, retain) NSNumber * playAndDownload;
 @property (nonatomic, retain) NSNumber * playTime;
-@property (nonatomic, retain) NSNumber * status; //0  1 下载中 2 完成
+@property (nonatomic, retain) NSNumber * status; //0  1 下载中 2 完成 3暂停
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * url;
 @property (nonatomic, retain) NSNumber * viewCount;

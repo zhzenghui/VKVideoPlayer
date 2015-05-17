@@ -10,11 +10,16 @@
 #import "DownLoadList.h"
 #import "DemoVideoPlayerViewController.h"
 
+#import "ZHm3u8.h"
 
 
 @interface DownLoadListViewController ()
 {
     UIView *view;
+    UILabel *currentLabel;
+    
+    
+    NSIndexPath *currentIndexPath;
 }
 @end
 
@@ -43,6 +48,8 @@
     [super loadView];
     
     
+    
+    
     view = [[UIView alloc] init];
     view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"cxc"]];
     view.tag = 102;
@@ -58,15 +65,8 @@
     [view addSubview:black];
     
     
-    
-    
     [[Button share] addToView:black addTarget:self rect:CGRectMake( 0, 0, 320, 50) tag:101 action:@selector(back:) imagePath:@"fanhui" ];
     [[Button share] addToView:black addTarget:self rect:CGRectMake( 0, 50, 320, 50) tag:101 action:@selector(clearList) imagePath:@"qingkong" ];
-
-    
-
-    
-    
     
     _tableView = [[UITableView alloc] init];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -86,6 +86,7 @@
 {
     [super viewDidLoad];
     
+    [ZHm3u8 share].delegate = self;
 
 //    NSPredicate *p = nil;
 //
@@ -97,7 +98,7 @@
 //    self.dataMArray = [[DownloadList findAllWithPredicate:p] mutableCopy];
 
 
-    NSPredicate* predicate1 = [NSPredicate predicateWithFormat: @" status = 1  or status = 2" ];
+    NSPredicate* predicate1 = [NSPredicate predicateWithFormat: @" status = 1  or status = 2 or status = 3" ];
     [self.dataMArray addObjectsFromArray: [DownloadList findAllWithPredicate:predicate1]];
     
     
@@ -107,6 +108,18 @@
 {
     [super viewDidAppear:YES];
     [_tableView reloadData];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:YES];
+    
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillAppear:YES];
+    
+    [ZHm3u8 share].delegate = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -120,19 +133,33 @@
     
     
     
-    UITableViewCell *cell = (UITableViewCell *)[[[button superview] superview] superview];
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    UITableViewCell *cell = (UITableViewCell *)[[[button  superview] superview] superview];
+    
+    if (iOS8) {
+        cell = (UITableViewCell *)[[[button superview] superview] superview];
+    }
+    
+    
+    NSIndexPath *indexPath = [_tableView indexPathForCell:cell];
+    
+    
+
+    currentIndexPath = indexPath;
+    
     
     
     DownloadList *download = [self. dataMArray objectAtIndex:indexPath.row];
+
+
     
-    
-    if ([download.currentIndex intValue] == [download.files intValue]) {
+    if ( [download.status intValue] == 2 ) {
         
         //        play
         DemoVideoPlayerViewController *viewController = [[DemoVideoPlayerViewController alloc] init];
         
         viewController.downloadList = download;
+        viewController.isPlayLocal = YES;
+        
         
         [self presentViewController:viewController animated:YES completion:^{
             
@@ -140,7 +167,46 @@
         
         
     }
+    else if ( [download.status intValue] == 1 ) {
+        
+        
+//        暂停当前的任务
+        [ZHm3u8 share].downloadList = download;
+        [[ZHm3u8 share] stopLoad];
+        
+    }
+    else if ( [download.status intValue] == 3 ) {
+        [ZHm3u8 share].downloadList = download;
+        download.status = @1;
+        [[ZHm3u8 share] startLoad];
+    }
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:nil];
+
+
+    
+    
+    [_tableView reloadData];
 }
+
+
+
+- (void)currentDownloadIndex:(DownloadList *)downloadList
+{
+    
+    
+
+    
+
+    
+    NSIndexPath *path = [NSIndexPath indexPathForRow:currentIndexPath.row inSection:currentIndexPath.section];
+    NSArray *myArray = [NSArray arrayWithObjects:path, nil];
+    [_tableView reloadRowsAtIndexPaths:myArray withRowAnimation:UITableViewRowAnimationNone];
+
+    
+}
+
+
+
 
 #pragma mark - Table view data source
 
@@ -215,14 +281,27 @@
 
     titleLabel1.text = download.title;
 
-    titleLabel2.text = [NSString stringWithFormat:@"%@/%@", download.currentIndex, download.files];
+    float f =  ([download.currentIndex intValue] * 100)/ [download.files floatValue];
     
-    
-    if ([download.currentIndex intValue] == [download.files intValue]) {
-        [b setTitle:@"播放" forState:UIControlStateNormal];
+    if ( isnan(f) ) {
+        titleLabel2.text = [NSString stringWithFormat:@"0.0%%"];
+
     }
     else {
+         titleLabel2.text = [NSString stringWithFormat:@"%.1f%%", f];
+    }
+
+    
+    
+    if ([download.status intValue] == 2) {
+        [b setTitle:@"播放" forState:UIControlStateNormal];
+    }
+    else if ([download.status intValue] == 1) {
         [b setTitle:@"下载中" forState:UIControlStateNormal];
+    }
+    
+    else if ([download.status intValue] == 3) {
+        [b setTitle:@"已暂停" forState:UIControlStateNormal];
     }
     
     return cell;
@@ -234,16 +313,31 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
         
-        NSDictionary *dict = [self.dataMArray objectAtIndex:indexPath.row];
+        DownloadList *download = [self.dataMArray objectAtIndex:indexPath.row];
         
         
         
-        [self.dataMArray removeObject:dict];
-        
-        
+        [self.dataMArray removeObject:download];
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         
-        
+
+        download.status = @4;
+        [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+            
+            NSString *str = [NSString stringWithFormat:@"%@/", download.identity];
+            NSString *path = KCachesName(str);
+            
+            
+
+            NSFileManager *fileManager = [NSFileManager defaultManager];
+            BOOL isDir = NO;
+            if ([fileManager fileExistsAtPath:path isDirectory:&isDir])
+            {
+                [fileManager removeItemAtPath:path error:&error];
+            }
+
+        }];
+
         
     }
     
@@ -270,7 +364,7 @@
 
 
 
-#pragma - ToInterfaceOrientation
+#pragma mark  - ToInterfaceOrientation
 
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation

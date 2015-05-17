@@ -198,6 +198,12 @@
     
     
     UITableViewCell *cell = (UITableViewCell *)[[[button superview] superview] superview] ;
+    
+    if (iOS8) {
+        cell = (UITableViewCell *)[[[button superview] superview] superview];
+    }
+    
+    
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
 
     DownloadList *download = [self. dataMArray objectAtIndex:indexPath.row];

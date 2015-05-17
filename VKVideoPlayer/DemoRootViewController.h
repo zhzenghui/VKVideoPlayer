@@ -15,10 +15,10 @@ enum {
 typedef NSUInteger State;
 
 
-
+#import "AllBaseViewController.h"
 #import <UIKit/UIKit.h>
 
-@interface DemoRootViewController :  UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface DemoRootViewController :  AllBaseViewController<UITableViewDataSource, UITableViewDelegate>
 {
     NSTimer *timer;
 }

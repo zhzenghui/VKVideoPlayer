@@ -108,6 +108,10 @@
 		C08DE6DE19B85F3B0093244E /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6DD19B85F3B0093244E /* AboutViewController.m */; };
 		C08DE6E119B860A70093244E /* AllBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DE6E019B860A70093244E /* AllBaseViewController.m */; };
 		C0E2EC2C19B999AD00741FD1 /* DownloadList.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E2EC2B19B999AD00741FD1 /* DownloadList.m */; };
+		C0EE46551AB837E2008F4EEA /* CameraImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EE46511AB837E2008F4EEA /* CameraImageHelper.m */; };
+		C0EE46561AB837E2008F4EEA /* WKKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EE46531AB837E2008F4EEA /* WKKViewController.m */; };
+		C0EE46571AB837E2008F4EEA /* WKKViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0EE46541AB837E2008F4EEA /* WKKViewController.xib */; };
+		C0EE468B1AB83C0A008F4EEA /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = C0EE468A1AB83C0A008F4EEA /* Podfile */; };
 		C0EF4C7219BE94DC00854A79 /* 版权声明@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EF4C5019BE94DB00854A79 /* 版权声明@2x.png */; };
 		C0EF4C7319BE94DC00854A79 /* 播放@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EF4C5119BE94DB00854A79 /* 播放@2x.png */; };
 		C0EF4C7419BE94DC00854A79 /* 返回@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0EF4C5219BE94DB00854A79 /* 返回@2x.png */; };
@@ -318,6 +322,12 @@
 		C08DE6E019B860A70093244E /* AllBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllBaseViewController.m; sourceTree = "<group>"; };
 		C0E2EC2A19B999AD00741FD1 /* DownloadList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadList.h; sourceTree = "<group>"; };
 		C0E2EC2B19B999AD00741FD1 /* DownloadList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadList.m; sourceTree = "<group>"; };
+		C0EE46501AB837E2008F4EEA /* CameraImageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CameraImageHelper.h; path = ../../CameraImageHelper.h; sourceTree = "<group>"; };
+		C0EE46511AB837E2008F4EEA /* CameraImageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CameraImageHelper.m; path = ../../CameraImageHelper.m; sourceTree = "<group>"; };
+		C0EE46521AB837E2008F4EEA /* WKKViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKKViewController.h; sourceTree = "<group>"; };
+		C0EE46531AB837E2008F4EEA /* WKKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKKViewController.m; sourceTree = "<group>"; };
+		C0EE46541AB837E2008F4EEA /* WKKViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WKKViewController.xib; sourceTree = "<group>"; };
+		C0EE468A1AB83C0A008F4EEA /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = ../../YooVideoPlay/Podfile; sourceTree = "<group>"; };
 		C0EF4C5019BE94DB00854A79 /* 版权声明@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "版权声明@2x.png"; sourceTree = "<group>"; };
 		C0EF4C5119BE94DB00854A79 /* 播放@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "播放@2x.png"; sourceTree = "<group>"; };
 		C0EF4C5219BE94DB00854A79 /* 返回@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回@2x.png"; sourceTree = "<group>"; };
@@ -441,6 +451,9 @@
 				1B53AC3C1916732200E1B484 /* DemoHTTPStreamingServer.m */,
 				C08DE6D019B85EE10093244E /* RecommendViewController.h */,
 				C08DE6D119B85EE10093244E /* RecommendViewController.m */,
+				C0EE46521AB837E2008F4EEA /* WKKViewController.h */,
+				C0EE46531AB837E2008F4EEA /* WKKViewController.m */,
+				C0EE46541AB837E2008F4EEA /* WKKViewController.xib */,
 				C08DE6D319B85F150093244E /* ZuiJinViewController.h */,
 				C08DE6D419B85F150093244E /* ZuiJinViewController.m */,
 				C08DE6D619B85F230093244E /* MianZeViewController.h */,
@@ -451,6 +464,7 @@
 				C08DE6DD19B85F3B0093244E /* AboutViewController.m */,
 				C035B77619B6FFE9006177B9 /* SettingViewController.h */,
 				C035B77719B6FFE9006177B9 /* SettingViewController.m */,
+				C0EE468A1AB83C0A008F4EEA /* Podfile */,
 				1BB6ADCC18EE626A00767FA3 /* Images.xcassets */,
 				1BB6ADC118EE626A00767FA3 /* Supporting Files */,
 			);
@@ -594,6 +608,8 @@
 		C08DE63919B846930093244E /* Unit */ = {
 			isa = PBXGroup;
 			children = (
+				C0EE46501AB837E2008F4EEA /* CameraImageHelper.h */,
+				C0EE46511AB837E2008F4EEA /* CameraImageHelper.m */,
 				C08DE63B19B846930093244E /* MagicalRecord */,
 				C08DE63A19B846930093244E /* CCLog.h */,
 				C08DE67719B846930093244E /* NSString+MD5.h */,
@@ -768,6 +784,7 @@
 				1BB6ADB418EE626A00767FA3 /* Frameworks */,
 				1BB6ADB518EE626A00767FA3 /* Resources */,
 				D97F52C7FDBD4A659DE0FAEA /* Copy Pods Resources */,
+				C079DC951AC2A28900FD196D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -870,6 +887,7 @@
 				1BA61FC418FD231D000DDB94 /* VKVideoPlayer_close.png in Resources */,
 				C0EF4C7519BE94DC00854A79 /* 关于我们@2x.png in Resources */,
 				1B2060321904257700E11467 /* English.srt in Resources */,
+				C0EE468B1AB83C0A008F4EEA /* Podfile in Resources */,
 				C0EF4C8819BE94DC00854A79 /* faxian@2x.png in Resources */,
 				C0EF4C8619BE94DC00854A79 /* dianyingpiao@2x.png in Resources */,
 				1BA61FCC18FD231D000DDB94 /* VKVideoPlayer_pause.png in Resources */,
@@ -899,6 +917,7 @@
 				C0EF4C8A19BE94DC00854A79 /* meize@2x.png in Resources */,
 				1BA61FCE18FD231D000DDB94 /* VKVideoPlayer_play_big.png in Resources */,
 				C0EF4C7319BE94DC00854A79 /* 播放@2x.png in Resources */,
+				C0EE46571AB837E2008F4EEA /* WKKViewController.xib in Resources */,
 				1BA61FD718FD231D000DDB94 /* VKVideoPlayer_zoom_out@2x.png in Resources */,
 				1BB9D35718FBE64E00568286 /* testCaptionBottom.srt in Resources */,
 				C0EF4C9219BE94DC00854A79 /* xianzai_list@2x.png in Resources */,
@@ -951,6 +970,19 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		C079DC951AC2A28900FD196D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "version=`/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\"`\ncommit=`git rev-parse --short HEAD`";
+		};
 		C40B611D35304B928326E2C8 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -988,6 +1020,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0EE46561AB837E2008F4EEA /* WKKViewController.m in Sources */,
 				C08DE6D819B85F230093244E /* MianZeViewController.m in Sources */,
 				1BB6ADC718EE626A00767FA3 /* main.m in Sources */,
 				C08DE6D219B85EE10093244E /* RecommendViewController.m in Sources */,
@@ -1032,6 +1065,7 @@
 				C08DE6B619B846930093244E /* MagicalRecord.m in Sources */,
 				C08DE6B919B846930093244E /* ZHFileCache.m in Sources */,
 				C035B77819B6FFE9006177B9 /* SettingViewController.m in Sources */,
+				C0EE46551AB837E2008F4EEA /* CameraImageHelper.m in Sources */,
 				C08DE6C419B846930093244E /* VKVideoPlayerTrack.m in Sources */,
 				C08DE6AF19B846930093244E /* NSPersistentStoreCoordinator+MagicalRecord.m in Sources */,
 				C08DE6A219B846930093244E /* NSRelationshipDescription+MagicalDataImport.m in Sources */,

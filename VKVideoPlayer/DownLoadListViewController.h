@@ -7,10 +7,10 @@
 //
 
 #import "AllBaseViewController.h"
+#import "ZHm3u8.h"
 
 
-
-@interface DownLoadListViewController : AllBaseViewController<UITableViewDataSource, UITableViewDelegate>
+@interface DownLoadListViewController : AllBaseViewController<UITableViewDataSource, UITableViewDelegate, ZHm3u8Delegate>
 {
     
 }

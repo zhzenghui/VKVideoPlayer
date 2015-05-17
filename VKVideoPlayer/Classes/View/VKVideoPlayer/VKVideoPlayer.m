@@ -860,6 +860,8 @@ typedef enum {
 }
 
 - (void)playContent {
+    self.state = VKVideoPlayerStateContentPaused;
+
   if (self.state == VKVideoPlayerStateContentPaused && self.isReadyToPlay) {
     [self.player play];
     self.state = VKVideoPlayerStateContentPlaying;
@@ -867,6 +869,7 @@ typedef enum {
 }
 
 - (void)pauseContent {
+
   [self pauseContent:NO completionHandler:nil];
 }
 

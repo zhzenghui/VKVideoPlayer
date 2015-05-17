@@ -127,6 +127,21 @@ typedef enum {
   });
 }
 
+
+// Called when the resource loader needs data or information about the resource. To take over the resource loading, we'll return YES from this method.
+- (BOOL)resourceLoader:(AVAssetResourceLoader *)resourceLoader shouldWaitForLoadingOfRequestedResource:(AVAssetResourceLoadingRequest *)loadingRequest {
+    NSLog(@"-----resourceLoader shouldWaitForLoadingOfRequestedResource -----------");
+    NSLog(@"%@", loadingRequest);
+
+    return  YES;
+}
+
+// Called when a load request is being cancelled.
+- (void)resourceLoader:(AVAssetResourceLoader *)resourceLoader didCancelLoadingRequest:(AVAssetResourceLoadingRequest *)loadingRequest {
+    NSLog(@"-----resourceLoader didCancelLoadingRequest -----------");
+    NSLog(@"%@", loadingRequest);
+}
+
 #pragma mark - Error Handling
 
 - (NSString*)videoPlayerErrorCodeToString:(VKVideoPlayerErrorCode)code {
@@ -433,6 +448,8 @@ typedef enum {
   
   // Get asset to create AVPlayerItem and AVPlayer
   AVURLAsset* asset = [[AVURLAsset alloc] initWithURL:streamURL options:@{ AVURLAssetPreferPreciseDurationAndTimingKey : @YES }];
+    [asset.resourceLoader setDelegate:self queue:dispatch_get_main_queue()];
+
   [asset loadValuesAsynchronouslyForKeys:@[kTracksKey, kPlayableKey] completionHandler:^{
     // Completion handler block.
     RUN_ON_UI_THREAD(^{

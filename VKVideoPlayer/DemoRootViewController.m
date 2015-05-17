@@ -177,7 +177,15 @@ typedef enum {
     }
 }
 
+#define kMsg @"msg"
+#define kStatus @"status"
+
+#define kResponse @"response"
+#define kMeta @"meta"
+#define kPosts @"posts"
+
 #pragma mark - network
+
 - (void)loadNetWorkData
 {
     
@@ -198,28 +206,27 @@ typedef enum {
         
     }
     
+    
+    
+    url = @"http://api.tumblr.com/v2/blog/taylorswift.tumblr.com/posts/video?api_key=fuiKNFp9vQFvjLNvx4sUwti4Yb5yGutBN4Xh10LXZhhRKjWlV4";
     __weak DemoRootViewController *weakSelf = self;
     
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     [manager GET:url parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
+        NSLog(@"load data seccess");
+        NSDictionary *meta =  responseObject[kMeta];//[self arrConverToMarr: [responseObject objectForKey:@"rv"]];
         
-        NSMutableArray *array = [self arrConverToMarr: [responseObject objectForKey:@"rv"]];
-        
-        if (array .count != 0) {
+        if ([meta[kStatus] intValue]== 200) {
             
+            NSArray *array = responseObject[kResponse][kPosts];
             if (self.dataMArray.count == 0) {
-                
                 self.dataMArray = [NSMutableArray arrayWithArray:array];
                 [self.tableView reloadData];
                 [weakSelf.tableView.pullToRefreshView stopAnimating];
-                
             }
             else {
-                
-                
-                
-                [self addArray:array];
+//                [self addArray:array];
                 [self.tableView reloadData];
                 
                 [weakSelf.tableView.infiniteScrollingView stopAnimating];
@@ -402,7 +409,9 @@ typedef enum {
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return screen_Height;
+    NSMutableDictionary *dict = [self.dataMArray objectAtIndex:indexPath.row];
+    
+    return  [[dict objectForKey:@"thumbnail_height"] floatValue];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -472,7 +481,7 @@ typedef enum {
     
     
     __weak UIImageView *imageView1 = (UIImageView *)[cell.contentView viewWithTag:100];
-    __block UIImageView *imageView2 = (UIImageView *)[cell.contentView viewWithTag:101];
+//    __block UIImageView *imageView2 = (UIImageView *)[cell.contentView viewWithTag:101];
     
     
     UILabel *titleLabel = (UILabel *)[cell.contentView viewWithTag:200];
@@ -483,54 +492,56 @@ typedef enum {
     
     NSMutableDictionary *dict = [self.dataMArray objectAtIndex:indexPath.row];
     
-    titleLabel.text = [dict objectForKey:@"title"];
+    titleLabel.text = [dict objectForKey:@"source_title"];
     
     NSString *urlString = nil;
-    if (is40) {
-        urlString =   [dict objectForKey:@"pic4"]  ;
-        
-    }
-    else {
-        urlString =  [dict objectForKey:@"pic35"]  ;
-        
-    }
-    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    imageView1.frame = CGRectMake(0, 0, [[dict objectForKey:@"thumbnail_width"] intValue], [[dict objectForKey:@"thumbnail_height"] intValue]);
+//    if (is40) {
+        urlString =   [dict objectForKey:@"thumbnail_url"]  ;
+//
+//    }
+//    else {
+//        urlString =  [dict objectForKey:@"pic35"]  ;
+//        
+//    }
+//    urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     
     
-    [imageView1 setImageWithURLRequest:[NSURLRequest requestWithURL: [NSURL URLWithString:urlString]] placeholderImage:[UIImage imageNamed:@"placeholder.png"] success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+    [imageView1 setImageWithURLRequest:[NSURLRequest requestWithURL: [NSURL URLWithString:urlString]] placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
         if (image)
         {
             imageView1.image = image;
 
-            NSData *data =  [[ZHFileCache share] file: [request.URL.absoluteString md5]];
-
-            if ( data ) {
-
-                imageView2.image = image;
-            }
-            else  {
-                
-                
-                const char *charLabel = [urlString UTF8String];
-
-                dispatch_queue_t queue = dispatch_queue_create(charLabel, NULL);
-
-                dispatch_async(queue, ^(void) {
-                    
-                    
-                        UIImage *i =  [image applyLightEffect];
-                        NSData *imageData = UIImageJPEGRepresentation(i, 1);
-
-                        [[ZHFileCache share] saveFile:imageData fileName: [request.URL.absoluteString md5]];
-                    
-                        dispatch_async(dispatch_get_main_queue(), ^{
-
-                            imageView2.image = i;
-                        });
-                    
-                });
-            }
+//            NSData *data =  [[ZHFileCache share] file: [request.URL.absoluteString md5]];
+//
+//            if ( data ) {
+//
+//                imageView2.image = image;
+//            }
+//            else  {
+//                
+//                
+//                const char *charLabel = [urlString UTF8String];
+//
+//                dispatch_queue_t queue = dispatch_queue_create(charLabel, NULL);
+//
+//                dispatch_async(queue, ^(void) {
+//                    
+//                    
+//                        UIImage *i =  [image applyLightEffect];
+//                        NSData *imageData = UIImageJPEGRepresentation(i, 1);
+//
+//                        [[ZHFileCache share] saveFile:imageData fileName: [request.URL.absoluteString md5]];
+//                    
+//                        dispatch_async(dispatch_get_main_queue(), ^{
+//
+//                            imageView2.image = i;
+//                        });
+//                    
+//                });
+//            }
         }
 
     } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
@@ -605,17 +616,80 @@ typedef enum {
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    UIView *view = (UIView *) [cell viewWithTag:102];
-    tableView.scrollEnabled = NO;
+//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+//    UIView *view = (UIView *) [cell viewWithTag:102];
+//    tableView.scrollEnabled = NO;
+//    
+//    
+//    
+//    [UIView animateWithDuration:KMiddleDuration animations:^{
+//        view.alpha = 1;
+//    }];
+//    
+//    
+
+    
+    
+    NSDictionary *dict = [self. dataMArray objectAtIndex:indexPath.row];
     
     
     
-    [UIView animateWithDuration:KMiddleDuration animations:^{
-        view.alpha = 1;
+    
+    //    纪录到最近播放
+    DownloadList *dlist ;
+    
+    NSArray *resArray = [DownloadList findByAttribute:@"identity" withValue:[NSNumber numberWithInt:[dict[@"id"] intValue]]];
+    
+    if (resArray .count > 0) {
+        dlist =  resArray[0];
+        int i = [dlist.viewCount intValue];
+        i++;
+        
+        dlist.update = [NSDate date];
+        dlist.viewCount = [NSNumber numberWithInt:i];
+        
+    }
+    else {
+        dlist = [DownloadList createEntity];
+        dlist.title =  dict[@"slug"];
+        dlist.identity = [NSNumber numberWithInt:[ dict[@"id"] intValue]];
+        dlist.status = @0;
+        //        NSString *url = [dict[@"url"]  stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        //        url = [url stringByReplacingOccurrencesOfString:@"&amp;" withString:@"&"];
+        dlist.url = dict[@"video_url"];
+        
+        
+        dlist.currentIndex = @0;
+        dlist.files = @0;
+        dlist.viewCount = @1;
+        dlist.playTime = @0.0;
+        dlist.playAndDownload = @0;
+        dlist.createDate = [NSDate date];
+        dlist.update = [NSDate date];
+        
+        
+    }
+    
+    [[NSManagedObjectContext defaultContext] saveToPersistentStoreWithCompletion:^(BOOL success, NSError *error) {
+        
+        if (success) {
+            //    打开play页面
+            
+            DLog(@"video_url: %@", dict[@"video_url"]);
+            DemoVideoPlayerViewController *viewController = [[DemoVideoPlayerViewController alloc] init];
+            
+            viewController.downloadList = dlist;
+            
+            [self presentViewController:viewController animated:YES completion:^{
+                
+            }];
+            
+        }
     }];
     
     
+    
+
     
 }
 
@@ -664,29 +738,29 @@ typedef enum {
     
 }
 
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate;
-{
-    
-    NSLog(@"%hhd", decelerate);
-    
-    if (timer) {
-        [timer invalidate];
-        timer = nil;
-    }
-    
-    timer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(scrollTableview) userInfo:nil repeats:NO];
-    
-    
-    
-}
+//- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate;
+//{
+//    
+//    NSLog(@"%hhd", decelerate);
+//    
+//    if (timer) {
+//        [timer invalidate];
+//        timer = nil;
+//    }
+//    
+//    timer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self selector:@selector(scrollTableview) userInfo:nil repeats:NO];
+//    
+//    
+//    
+//}
 
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView;
-{
-    //    int i = round(scrollView.contentOffset.y / screen_Height);
-    //    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForItem:i inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
-    [self scrollTableview ];
-}
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView;
+//{
+//    //    int i = round(scrollView.contentOffset.y / screen_Height);
+//    //    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForItem:i inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+//    [self scrollTableview ];
+//}
 
 
 //// called on start of dragging (may require some time and or distance to move)
@@ -700,14 +774,14 @@ typedef enum {
 //    NSLog(@"scrollViewWillEndDragging");
 //
 //}
-
-- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
-    NSLog(@"scrollViewDidEndScrollingAnimation");
-    
-    [self scrollTableview];
-    
-    
-}// called when setContentOffset/scrollRectVisible:animated: finishes. not called if not animating
+//
+//- (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
+//    NSLog(@"scrollViewDidEndScrollingAnimation");
+//    
+//    [self scrollTableview];
+//    
+//    
+//}// called when setContentOffset/scrollRectVisible:animated: finishes. not called if not animating
 
 
 //- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view NS_AVAILABLE_IOS(3_2){
@@ -743,30 +817,30 @@ typedef enum {
 
 #pragma mark - UIInterfaceOrientation
 
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
-{
-    return UIInterfaceOrientationPortrait ;
-}
-
-- (NSUInteger)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskPortrait;
-}
-
-
--(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
-    [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
-}
-
-
-- (BOOL)shouldAutorotate {
-    return YES;
-}
-
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
-    return (toInterfaceOrientation == UIInterfaceOrientationMaskPortrait);
-}
+//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+//{
+//    return UIInterfaceOrientationPortrait ;
+//}
+//
+//- (NSUInteger)supportedInterfaceOrientations
+//{
+//    return UIInterfaceOrientationMaskPortrait;
+//}
+//
+//
+//-(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+//    [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
+//}
+//
+//
+//- (BOOL)shouldAutorotate {
+//    return YES;
+//}
+//
+//
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+//    return (toInterfaceOrientation == UIInterfaceOrientationMaskPortrait);
+//}
 //#pragma mark - UITableViewDelegate
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 //  UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];

@@ -24,6 +24,7 @@
     
     NSString *writableDBPath = [KCachesDirectory stringByAppendingPathComponent:@"web/"];
     success = [fileManager fileExistsAtPath:writableDBPath];
+    NSLog(@"%@", writableDBPath);
     if (success) return;
     
     NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"web/"];

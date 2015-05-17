@@ -104,7 +104,8 @@ typedef enum {
 
 
 @interface VKVideoPlayer : NSObject<
-VKVideoPlayerViewDelegate
+VKVideoPlayerViewDelegate,
+AVAssetResourceLoaderDelegate
 >
 @property (nonatomic, strong) VKVideoPlayerView *view;
 @property (nonatomic, strong) id<VKVideoPlayerTrackProtocol> track;
